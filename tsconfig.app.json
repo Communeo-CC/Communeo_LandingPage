@@ -1,0 +1,19 @@
+{
+    "extends": "./tsconfig.json",  // Extend the base tsconfig.json
+    "compilerOptions": {
+      "outDir": "./out-tsc/app",
+      "types": [],  // Ensure no conflicting types are included
+      "baseUrl": ".",  // Base URL for this app-specific config
+      "paths": {
+        "@/*": ["./src/*"]  // Alias for imports in the `src` folder
+      }
+    },
+    "files": [
+      "src/main.ts",
+      "src/polyfills.ts"
+    ],
+    "include": [
+      "src/**/*.d.ts"
+    ]
+  }
+  
