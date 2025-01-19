@@ -1,16 +1,15 @@
 import ButtonGradient from "./assets/svg/ButtonGradient";
-import Benefits from "./components/Benefits";
-import Collaboration from "./components/Collaboration";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Pricing from "./components/Pricing";
-import Roadmap from "./components/Roadmap";
-import Services from "./components/Services";
+import Benefits from "./components/Vidul/Benefits";
+import Collaboration from "./components/Vidul/Collaboration";
+import Footer from "./components/Vidul/Footer";
+import Header from "./components/Vidul/Header";
+import Pricing from "./components/Vidul/Pricing";
+import Roadmap from "./components/Vidul/Roadmap";
+import Services from "./components/Vidul/Services";
 
-import FUIFeatureSectionWithCards from "./components/FUIFeatureSectionWithCards";
+import FUIFeatureSectionWithCards from "./components/Vidul/FUIFeatureSectionWithCards";
 import GradualSpacing from "./components/ui/GradualSpacing";
-import FluidCursorDemo from "../src/components/FluidCursorDemo"
+import FluidCursorDemo from "../src/components/Vidul/FluidCursorDemo"
 
 
 
