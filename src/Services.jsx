@@ -1,3 +1,4 @@
+import React from 'react'
 import ButtonGradient from "./assets/svg/ButtonGradient";
 import Benefits from "./components/Kaveesha/Benefits";
 import Collaboration from "./components/Kaveesha/Collaboration";
@@ -12,31 +13,19 @@ import FUIFeatureSectionWithCards from "./components/Kaveesha/FUIFeatureSectionW
 import GradualSpacing from "./components/ui/GradualSpacing";
 
 
+import { HeroSection } from "./components/Kaveesha/HeroSection"
+import { FeaturesSection } from "./components/Kaveesha/FeaturesSection"
+import { AnalyticsSection } from "./components/Kaveesha/AnalyticsSection"
 
-
-const App = () => {
+export default function Services() {
   return (
-    <>
-
-      
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-
-        <GradualSpacing/>
-        {/* SpotlightPreview is a custom component */}
-        <Benefits />
-        <FUIFeatureSectionWithCards />
-        <Collaboration />
-        <Services />
-        <Pricing />
-        <Roadmap />
-        <Footer />
-      </div>
-
-      <ButtonGradient />
-      
-    </>
-  );
-};
-
-export default App;
+    <main className="min-h-screen">
+      <Header />
+      <HeroSection />
+      <FeaturesSection />
+      <AnalyticsSection />
+      <Footer />
+    </main>
+    
+  )
+}
