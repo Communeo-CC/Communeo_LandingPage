@@ -1,5 +1,5 @@
 import React from "react";
-import Icon1 from "../../assets/icons/Icon1.png"; 
+import Icon1 from "../../assets/icons/Icon1.png";
 import Icon2 from "../../assets/icons/Icon2.png";
 import Icon3 from "../../assets/icons/Icon3.png";
 import Icon4 from "../../assets/icons/Icon4.png";
@@ -113,4 +113,3 @@ export default function FUIFeatureSectionWithCards() {
   );
 }
 
-      

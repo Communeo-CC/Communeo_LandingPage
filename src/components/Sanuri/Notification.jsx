@@ -36,7 +36,7 @@ const Notification = ({ className, title }) => {
               </li>
             ))}
           </ul>
-          
+
         </div>
       </div>
     </div>
