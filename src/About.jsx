@@ -12,6 +12,11 @@ import GradualSpacing from "./components/ui/GradualSpacing";
 import Section from "./components/Sanuri/Section";
 import Heading from "./components/Sanuri/Heading";
 import TagLine from "./components/Sanuri/Tagline";
+
+import { teamPhoto1, teamPhoto2, teamPhoto3, check } from "./assets/assetsnew";
+import { teamDetails, missionPoints } from "./components/Sanuri/Constants";
+import { Gradient } from "./components/Sanuri/Design/Gradient";
+
 import TeamCard from "./components/Sanuri/TeamCard";
 import MissionCard from "./components/Sanuri/MissionCard";
 
