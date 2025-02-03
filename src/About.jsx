@@ -99,30 +99,6 @@ const About = () => {
       </div>
     </Section>
 
-    <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-            <Header />
-            <GradualSpacing/>
-            {/* SpotlightPreview is a custom component */}
-            <Heading />
-            <Section />
-            <TeamCard />
-            <TagLine />
-            <MissionCard />
-            <Benefits />
-            <FUIFeatureSectionWithCards />
-            <Collaboration />
-            <Services />
-            <Pricing />
-            <Roadmap />
-            <Footer />
-    </div>
-
-          <ButtonGradient />
-
-  );
-};
-
-
 
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
