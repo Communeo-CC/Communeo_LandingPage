@@ -17,7 +17,7 @@ const AccordionItem = React.forwardRef(
     <AccordionPrimitive.Item
       ref={ref}
       // Removed the 'border-b' class to eliminate the bottom border
-      className={ny(className)}
+      className={ny(className)}  
       {...props}
     />
   )
@@ -62,17 +62,17 @@ export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
 const Roadmap = () => (
   <Section className="overflow-hidden" id="roadmap">
     <div className="container md:pb-10 sm:px-5 xl:px-52"> {/* Added responsive padding */}
-
+      
       {/* Heading */}
       <Heading tag="FAQ" title="Frequently Asked Questions" />
-
+      
       {/* Accordion section placed here */}
       <Accordion type="single" collapsible>
         {roadmap && roadmap.length > 0 ? (
           roadmap.map((step, index) => (
             <AccordionItem key={index} value={`step-${index}`}>
               <AccordionTrigger>{step.title}</AccordionTrigger>
-
+              
               {/* Description under each accordion header */}
               <AccordionContent>
                 <p className="mt-2 sm:text-[23px] md:text-[17px] lg:text-[16.5px]">
@@ -87,7 +87,7 @@ const Roadmap = () => (
       </Accordion>
 
       <Gradient />
-
+      
       {/* Our roadmap button */}
       <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
         <Button href="/roadmap">Contact Us For More</Button>
