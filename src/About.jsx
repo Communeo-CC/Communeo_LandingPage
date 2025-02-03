@@ -9,30 +9,34 @@ import Services from "./components/Sanuri/Services";
 
 import FUIFeatureSectionWithCards from "./components/Sanuri/FUIFeatureSectionWithCards";
 import GradualSpacing from "./components/ui/GradualSpacing";
-
+import Section from "./components/Sanuri/Section";
+import Heading from "./components/Sanuri/Heading";
+import TagLine from "./components/Sanuri/Tagline";
+import TeamCard from "./components/Sanuri/TeamCard";
+import MissionCard from "./components/Sanuri/MissionCard";
 
 
 
 const App = () => {
   return (
-    <>
-      
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-        <GradualSpacing/>
-        {/* SpotlightPreview is a custom component */}
-        <Benefits />
-        <FUIFeatureSectionWithCards />
-        <Collaboration />
-        <Services />
-        <Pricing />
-        <Roadmap />
-        <Footer />
-      </div>
-
+    <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+      <Header />
+      <GradualSpacing/>
+      {/* SpotlightPreview is a custom component */}
+      <Heading />
+      <Section />
+      <TeamCard />
+      <TagLine />
+      <MissionCard />
+      <Benefits />
+      <FUIFeatureSectionWithCards />
+      <Collaboration />
+      <Services />
+      <Pricing />
+      <Roadmap />
+      <Footer />
       <ButtonGradient />
-      
-    </>
+    </div>
   );
 };
 
