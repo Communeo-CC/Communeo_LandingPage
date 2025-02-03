@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "../Kaveesha/Button"
 import { motion } from "framer-motion"
 import { BarChart, Activity, TrendingUp } from 'lucide-react'
 

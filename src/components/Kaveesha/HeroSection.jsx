@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "./Button"
 import { motion } from "framer-motion"
 
 export function HeroSection() {

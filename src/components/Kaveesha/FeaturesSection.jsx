@@ -1,4 +1,4 @@
-import { FeatureCard } from "D:\Communeo_LandingPage\src\components\Kaveesha\FeatureCard.jsx"
+import { FeatureCard } from "./FeatureCard"
 
 export function FeaturesSection() {
   const features = [
