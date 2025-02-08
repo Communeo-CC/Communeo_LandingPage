@@ -1,4 +1,7 @@
+import React from 'react'
 import { FeatureCard } from "./FeatureCard"
+
+// ... rest of the component code
 
 export function FeaturesSection() {
   const features = [

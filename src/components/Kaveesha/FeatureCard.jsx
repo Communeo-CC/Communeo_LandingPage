@@ -1,5 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import React from 'react'
 import { motion } from "framer-motion"
+import { Card, CardContent, CardHeader, CardTitle } from "./Card"
 
 export function FeatureCard({ title, description, image, delay }) {
   return (
@@ -8,7 +9,7 @@ export function FeatureCard({ title, description, image, delay }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
     >
-      <Card className="h-full overflow-hidden bg-white">
+      <Card className="h-full overflow-hidden">
         <CardHeader>
           <div className="overflow-hidden rounded-lg">
             <img
@@ -17,7 +18,7 @@ export function FeatureCard({ title, description, image, delay }) {
               className="h-48 w-full object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
-          <CardTitle className="text-xl font-bold text-black">{title}</CardTitle>
+          <CardTitle className="mt-4 text-black">{title}</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-gray-600">{description}</p>
