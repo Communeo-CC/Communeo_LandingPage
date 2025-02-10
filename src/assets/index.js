@@ -78,11 +78,6 @@ import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
-import teamPhoto1 from "./assetsnew/teamPhoto1.jpeg";
-import teamPhoto2 from "./assetsnew/teamPhoto1.jpeg";
-import teamPhoto3 from "./assetsnew/teamPhoto1.jpeg";
-import check from "./assetsnew/check.svg";
-
 export {
   brainwave,
   check,
@@ -155,9 +150,4 @@ export {
   instagram,
   telegram,
   twitter,
-
-  teamPhoto1,
-  teamPhoto2,
-  teamPhoto3,
-  check,
 };
