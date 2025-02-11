@@ -4,12 +4,13 @@ import ContactDetails from "./components/Hirushi/ContactDetails";
 import Footer from "./components/Hirushi/Footer";
 import Header from "./components/Hirushi/Header";
 
-import Pricing from "./components/Hirushi/Pricing";
+import Connect from "./components/Hirushi/Connect";
 import Roadmap from "./components/Hirushi/Roadmap";
 import LocationDetails from "./components/Hirushi/LocationDetails";
 
 import Form from "./components/Hirushi/Form";
 import GradualSpacing from "./components/ui/GradualSpacing";
+
 
 
 
@@ -25,8 +26,8 @@ const App = () => {
         <Form />
         <ContactDetails />
         <LocationDetails />
-        <Pricing />
-        <Roadmap />
+        <Connect />
+        {/* <Roadmap /> */}
         <Footer />
       </div>
 

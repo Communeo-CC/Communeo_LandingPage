@@ -5,13 +5,13 @@ export default function Locations() {
     {
       title: "GP Square",
       description: "GP Square, Colombo",
-      image: "/C:/Users/USER/Documents/IIT/2nd Year/SDGP/LandingPage Images/GP Square.jpg", // Replace with actual image path
+      image: "/GP Square.jpg", // Replace with actual image path
       link: "https://maps.google.com",
     },
     {
       title: "Spencer Building",
       description: "Spencer Building, Colombo",
-      image: "/path-to-spencer-building.jpg", // Replace with actual image path
+      image: "/Spencer.jpg", // Replace with actual image path
       link: "https://maps.google.com",
     },
   ];
@@ -25,7 +25,7 @@ export default function Locations() {
         <h3 className="text-lg font-Large text-white">Visit Us</h3>
         <h2 className="text-3xl font-bold text-orange-600 mb-2">Locations</h2>
         <p className="text-white mb-10">
-          Don't hesitate to drop by and visit our team at the following locations.
+          Don't hesitate to drop by and visit our team at the following locations
         </p>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
