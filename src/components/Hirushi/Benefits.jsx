@@ -7,7 +7,7 @@ const Benefits = () => {
       <div className="container relative z-2">
         <Heading
           className="mt-10 md:mt-40 lg:mt-10 md:max-w-md lg:max-w-2xl"
-          title="Unleash The Power Of Effective Marketing"
+          title="Sign In"
         />
       </div>
     </Section>
