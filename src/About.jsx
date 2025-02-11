@@ -104,13 +104,13 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Visal Madhusankha",
+      name: "Visal Vitanage",
       role: "CEO & Founder",
       bio: "Visionary leader with expertise in digital marketing and tech innovation.",
       imageUrl: visal
     },
     {
-      name: "Kaveesha Dissanayake",
+      name: "Kaveesha Liyanaarachchi",
       role: "CTO",
       bio: "AI expert with a passion for building scalable technology solutions.",
       imageUrl: kaveesha
@@ -122,19 +122,19 @@ const AboutPage = () => {
       imageUrl: sanuri
     },
     {
-      name: "Hirushi Nelaka",
+      name: "Hirushi Perera",
       role: "Head of Marketing",
       bio: "Marketing specialist with proven track record in digital campaigns.",
       imageUrl: hirushi
     },
     {
-      name: "Thamindu Ranawaka",
+      name: "Thamindu Wickramaarachchi",
       role: "Lead Developer",
       bio: "Senior developer specializing in full-stack development and system architecture.",
       imageUrl: thamindu
     },
     {
-      name: "Vidul Batugahage",
+      name: "Vidul Wickramasinghe",
       role: "Head of Design",
       bio: "Creative director with expertise in UI/UX and brand identity.",
       imageUrl: vidul
