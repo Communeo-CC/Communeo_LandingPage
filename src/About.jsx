@@ -1,3 +1,5 @@
+//about.jsx
+
 import React from 'react';
 import { 
   ArrowRight, 
@@ -10,305 +12,361 @@ import {
   Lock, 
   Phone, 
   Mail, 
-  MapPin 
+  MapPin,
+  ChevronRight
 } from 'lucide-react';
 import Footer from "./components/Sanuri/Footer";
 import Header from "./components/Sanuri/Header";
 import { Button } from './components/Sanuri/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from './components/Sanuri/ui/card';
 import ButtonGradient from "././assets/svg/ButtonGradient";
+import FluidCursorDemo from "./components/Sanuri/FluidCursorDemo"
+import pic1 from "./components/Sanuri/images/pic1.jpg";
+import map from "./components/Sanuri/images/map.png";
+import visal from "./components/Sanuri/images/visal.jpg";
+import sanuri from "./components/Sanuri/images/sanuri.jpg";
+import kaveesha from "./components/Sanuri/images/kaveesha.jpg";
+import hirushi from "./components/Sanuri/images/hirushi.jpg";
+import thamindu from "./components/Sanuri/images/thamindu.jpg";
+import vidul from "./components/Sanuri/images/vidul.png";
+import choose1 from "./components/Sanuri/images/choose1.jpg";
+import choose2 from "./components/Sanuri/images/choose2.jpeg";
+import choose3 from "./components/Sanuri/images/choose3.png";
+
 
 const AboutPage = () => {
-  const missions = [
+  const stats = [
     {
-      title: "Our Mission",
-      description: "To empower businesses with intelligent social media solutions that drive meaningful engagement and measurable growth.",
-      icon: <Target className="w-8 h-8 text-orange-600" />
+      icon: <Users className="h-6 w-6 text-orange-400" />,
+      number: "100K+",
+      label: "Active Users"
     },
     {
+      icon: <Globe className="h-6 w-6 text-red-400" />,
+      number: "150+",
+      label: "Countries Served"
+    },
+    {
+      icon: <BarChart className="h-6 w-6 text-yellow-400" />,
+      number: "10M+",
+      label: "Posts Analyzed"
+    }
+  ];
+
+  const missions = [
+    {
+      icon: <Target className="h-12 w-12 text-orange-600" />,
+      title: "Our Mission",
+      description: "To empower businesses with intelligent social media solutions that drive meaningful engagement and measurable results."
+    },
+    {
+      icon: <Zap className="h-12 w-12 text-red-600" />,
       title: "Our Vision",
-      description: "To become the global standard for data-driven social media marketing, helping businesses build authentic connections with their audience.",
-      icon: <Zap className="w-8 h-8 text-orange-600" />
+      description: "To become the global leader in AI-powered social media management, setting new standards for digital marketing excellence."
+    }
+  ];
+
+  const values = [
+    {
+      icon: <Award className="h-8 w-8 text-orange-600" />,
+      title: "Excellence",
+      description: "We strive for excellence in everything we do, from product development to customer service."
+    },
+    {
+      icon: <Users className="h-8 w-8 text-red-600" />,
+      title: "Customer First",
+      description: "Our customers' success is our success. We prioritize their needs in every decision we make."
+    },
+    {
+      icon: <Lock className="h-8 w-8 text-yellow-600" />,
+      title: "Trust & Security",
+      description: "We maintain the highest standards of data security and privacy protection for our users."
     }
   ];
 
   const features = [
     {
       title: "AI-Powered Analytics",
-      description: "Advanced algorithms that analyze engagement patterns and provide actionable insights for your social media strategy."
+      description: "Advanced analytics powered by machine learning to provide actionable insights.",
+      image: choose1
     },
     {
-      title: "Cross-Platform Integration",
-      description: "Seamlessly manage all your social media accounts from a single, intuitive dashboard."
+      title: "Automated Scheduling",
+      description: "Intelligent content scheduling that maximizes engagement and reach.",
+      image: choose2
     },
     {
-      title: "Smart Scheduling",
-      description: "Optimize post timing with our ML-powered scheduling system that predicts peak engagement periods."
+      title: "Real-time Monitoring",
+      description: "24/7 monitoring of your social media presence and brand mentions.",
+      image: choose3
     }
   ];
 
   const team = [
     {
-      name: "Sarah Chen",
+      name: "Visal Madhusankha",
       role: "CEO & Founder",
-      bio: "Former social media strategist with 15+ years of experience in digital marketing.",
-      imageUrl: "/api/placeholder/150/150"
+      bio: "Visionary leader with expertise in digital marketing and tech innovation.",
+      imageUrl: visal
     },
     {
-      name: "Marcus Rodriguez",
+      name: "Kaveesha Dissanayake",
       role: "CTO",
-      bio: "AI specialist with a background in building scalable social media analytics platforms.",
-      imageUrl: "/api/placeholder/150/150"
+      bio: "AI expert with a passion for building scalable technology solutions.",
+      imageUrl: kaveesha
     },
     {
-      name: "Aisha Patel",
+      name: "Sanuri Perera",
       role: "Head of Product",
-      bio: "Product leader specialized in user-centric design and agile methodologies.",
-      imageUrl: "/api/placeholder/150/150"
-    }
-  ];
-
-  const stats = [
-    {
-      number: "500K+",
-      label: "Active Users",
-      icon: <Users className="w-6 h-6 text-orange-600" />
+      bio: "Product strategist focused on creating intuitive user experiences.",
+      imageUrl: sanuri
     },
     {
-      number: "50M+",
-      label: "Posts Analyzed",
-      icon: <BarChart className="w-6 h-6 text-orange-600" />
+      name: "Hirushi Nelaka",
+      role: "Head of Marketing",
+      bio: "Marketing specialist with proven track record in digital campaigns.",
+      imageUrl: hirushi
     },
     {
-      number: "100+",
-      label: "Countries",
-      icon: <Globe className="w-6 h-6 text-orange-600" />
-    }
-  ];
-
-  const values = [
-    {
-      title: "Innovation",
-      description: "We push boundaries and embrace new technologies to solve complex social media challenges.",
-      icon: <Zap className="w-6 h-6 text-orange-600" />
+      name: "Thamindu Ranawaka",
+      role: "Lead Developer",
+      bio: "Senior developer specializing in full-stack development and system architecture.",
+      imageUrl: thamindu
     },
     {
-      title: "Trust",
-      description: "We maintain the highest standards of data security and privacy for our users.",
-      icon: <Lock className="w-6 h-6 text-orange-600" />
-    },
-    {
-      title: "Excellence",
-      description: "We strive for excellence in every feature and service we provide.",
-      icon: <Award className="w-6 h-6 text-orange-600" />
+      name: "Vidul Batugahage",
+      role: "Head of Design",
+      bio: "Creative director with expertise in UI/UX and brand identity.",
+      imageUrl: vidul
     }
   ];
 
   const officeLocations = [
     {
-      city: "San Francisco",
-      address: "123 Tech Street, SF, CA 94105",
-      phone: "+1 (555) 123-4567",
-      email: "sf@platform.com"
+      city: "Colombo",
+      address: "22/6,Mangal Mawatha,Maharagama",
+      phone: "0716291717",
+      email: "communeo@gmail.com",
+      image: "/images/map.png/1000/600"
     },
-    {
-      city: "London",
-      address: "456 Digital Lane, London, UK EC2A 2BB",
-      phone: "+44 20 7123 4567",
-      email: "london@platform.com"
-    }
+    
   ];
 
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
-        
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          {/* Hero Section */}
-          <section className="text-center mb-20">
-            <h1 className="text-5xl text-orange-600 font-bold mb-6">
-              Revolutionizing Social Media Marketing
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              We're building the future of social media management with AI-powered
-              insights and seamless automation.
-            </p>
-            <Button className="flex items-center gap-2 text-orange-600">
-              Get Started <ArrowRight className="w-4 h-4" />
-            </Button>
-          </section>
 
-          {/* Stats Section */}
-          <section className="mb-20">
-            <div className="grid md:grid-cols-3 gap-8">
-              {stats.map((stat, index) => (
-                <Card key={index} className="p-6">
-                  <CardContent className="flex flex-col items-center text-center">
-                    {stat.icon}
-                    <h3 className="text-3xl font-bold mt-4 mb-2">{stat.number}</h3>
-                    <p className="text-gray-600">{stat.label}</p>
-                  </CardContent>
-                </Card>
-              ))}
+        <div className="min-h-screen bg-black">
+      {/* Hero Section */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/30 to-red-950/30" />
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative z-10">
+              <div className="absolute -left-8 -top-8 w-32 h-32 bg-orange-800/30 rounded-full opacity-50 blur-xl" />
+              <div className="absolute -right-4 bottom-8 w-24 h-24 bg-red-800/30 rounded-full opacity-50 blur-lg" />
+              <h1 className="text-7xl font-bold mb-8 leading-tight text-white">
+                We Shape The
+                <span className="block mt-2 bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text">
+                  Future of Social Media
+                </span>
+              </h1>
+              <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+                Transforming how businesses connect with their audience through
+                AI-powered insights and seamless automation.
+              </p>
+              <div className="flex gap-4">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button size="lg" variant="outline" className="text-orange-400 border-orange-400 hover:bg-orange-950">
+                  Learn More <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
             </div>
-          </section>
-
-          {/* Mission and Vision Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Mission & Vision
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {missions.map((mission, index) => (
-                <Card key={index} className="p-6">
-                  <CardContent className="flex flex-col items-center text-center">
-                    <div className="mb-4">{mission.icon}</div>
-                    <CardTitle className="mb-2">{mission.title}</CardTitle>
-                    <p className="text-gray-600">{mission.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="relative lg:h-[600px]">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-800/20 to-red-800/20 rounded-full blur-3xl opacity-30" />
+              <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                <img 
+                  width = {600}
+                  height={800}
+                  src={pic1}
+                  alt="Social Media Marketing"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-          </section>
-
-          {/* Values Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Our Values
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {values.map((value, index) => (
-                <Card key={index} className="p-6">
-                  <CardContent>
-                    <div className="mb-4">{value.icon}</div>
-                    <CardTitle className="mb-2">{value.title}</CardTitle>
-                    <p className="text-gray-600">{value.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Features Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Why Choose Us
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <Card key={index} className="p-6">
-                  <CardContent>
-                    <CardTitle className="mb-2">{feature.title}</CardTitle>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Team Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Meet Our Team
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {team.map((member, index) => (
-                <Card key={index} className="p-6">
-                  <CardContent className="flex flex-col items-center text-center">
-                    <img
-                      src={member.imageUrl}
-                      alt={member.name}
-                      className="w-42 h-42 rounded-full mb-5 object-cover"
-                    />
-                    <CardTitle className="mb-1">{member.name}</CardTitle>
-                    <p className="text-orange-600 font-medium mb-2">{member.role}</p>
-                    <p className="text-gray-600">{member.bio}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Timeline Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Our Journey
-            </h2>
-            <div className="space-y-8">
-              {[
-                {
-                  year: "2024",
-                  title: "Global Expansion",
-                  description: "Reached users in over 100 countries and launched advanced AI features"
-                },
-                {
-                  year: "2023",
-                  title: "Series B Funding",
-                  description: "Secured $50M in funding to accelerate product development"
-                },
-                {
-                  year: "2022",
-                  title: "Platform Launch",
-                  description: "Successfully launched our platform with core analytics features"
-                }
-              ].map((item, index) => (
-                <Card key={index} className="p-6">
-                  <CardContent className="flex items-start gap-4">
-                    <div className="w-24 font-bold">{item.year}</div>
-                    <div>
-                      <CardTitle className="mb-2">{item.title}</CardTitle>
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Office Locations Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Our Offices
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {officeLocations.map((office, index) => (
-                <Card key={index} className="p-6">
-                  <CardContent>
-                    <CardTitle className="mb-4">{office.city}</CardTitle>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-5 h-5 text-gray-400" />
-                        <p className="text-gray-600">{office.address}</p>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-5 h-5 text-gray-400" />
-                        <p className="text-gray-600">{office.phone}</p>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Mail className="w-5 h-5 text-gray-400" />
-                        <p className="text-gray-600">{office.email}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="text-center bg-red-50 rounded-xl p-12">
-            <h2 className="text-3xl font-bold text-orange-600 mb-4">
-              Ready to Transform Your Social Media Strategy?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Join thousands of businesses already using our platform to grow their social media presence.
-            </p>
-            <Button size="lg" className="flex items-center gap-2 text-orange-600">
-              Start Free Trial <ArrowRight className="w-4 h-4" />
-            </Button>
-          </section>
+          </div>
         </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            {stats.map((stat, index) => (
+              <Card key={index} className="bg-orange-900 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-6">
+                    <div className="bg-orange-600 p-4 rounded-2xl">
+                      {stat.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-4xl font-bold mb-1 bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text">
+                        {stat.number}
+                      </h3>
+                      <p className="text-gray-300">{stat.label}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission and Vision Section */}
+      <section className="py-20 bg-gradient-to-b from-orange-950 to-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
+            Our Purpose
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            {missions.map((mission, index) => (
+              <Card key={index} className="bg-orange-900 border-none shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-10">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="mb-8 p-6 bg-orange-800 rounded-full transform hover:rotate-12 transition-transform duration-300">
+                      {mission.icon}
+                    </div>
+                    <CardTitle className="text-3xl mb-6 text-white">{mission.title}</CardTitle>
+                    <p className="text-gray-300 text-lg leading-relaxed">{mission.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-900 to-black opacity-50" />
+        <div className="container mx-auto px-4 relative">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">Our Values</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {values.map((value, index) => (
+              <Card key={index} className="bg-orange-900/80 backdrop-blur border-none shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="mb-6 p-4 bg-orange-800 rounded-2xl inline-block">
+                    {value.icon}
+                  </div>
+                  <CardTitle className="text-2xl mb-4 text-white">{value.title}</CardTitle>
+                  <p className="text-gray-300 leading-relaxed">{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">Why Choose Us</h2>
+          <div className="space-y-20">
+            {features.map((feature, index) => (
+              <div key={index} className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
+                <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
+                  <h3 className="text-3xl font-bold mb-6 text-orange-400">{feature.title}</h3>
+                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">{feature.description}</p>
+                  <Button variant="outline" size="lg" className="text-orange-400 border-orange-400 hover:bg-orange-950">
+                    Learn More <ChevronRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </div>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-800/20 to-red-800/20 rounded-3xl blur-2xl opacity-30" />
+                  <img 
+                    src={feature.image}
+                    alt={feature.title}
+                    className="relative rounded-3xl shadow-xl w-full h-[400px] object-cover"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 bg-gradient-to-b from-orange-900 to-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">Meet Our Team</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <Card key={index} className="bg-orange-800 border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div className="relative h-80">
+                  <img
+                    src={member.imageUrl}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
+                    <p className="text-orange-300 font-medium">{member.role}</p>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <p className="text-gray-300">{member.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* Office Locations Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-10">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">Our Location</h2>
+          <div className="grid md:grid-cols-1">
+            {officeLocations.map((office, index) => (
+              <Card key={index} className="bg-orange-800 border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div className="relative h-64">
+                  <img 
+                    src={map}
+                    alt={office.city}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <h3 className="absolute bottom-6 left-6 text-3xl font-bold text-white">{office.city}</h3>
+                </div>
+                <CardContent className="p-8">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <MapPin className="w-5 h-5 text-orange-400" />
+                      <p className="text-gray-300">{office.address}</p>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <Phone className="w-5 h-5 text-orange-400" />
+                      <p className="text-gray-300">{office.phone}</p>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <Mail className="w-5 h-5 text-orange-400" />
+                      <p className="text-gray-300">{office.email}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+      
         <Footer />
       </div>
       <ButtonGradient />
