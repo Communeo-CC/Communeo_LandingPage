@@ -60,7 +60,7 @@ const AboutPage = () => {
       description: "To empower businesses with intelligent social media solutions that drive meaningful engagement and measurable results."
     },
     {
-      icon: <Zap className="h-12 w-12 text-red-600" />,
+      icon: <Zap className="h-12 w-12 text-orange-600" />,
       title: "Our Vision",
       description: "To become the global leader in AI-powered social media management, setting new standards for digital marketing excellence."
     }
@@ -157,30 +157,30 @@ const AboutPage = () => {
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
 
-        <div className="min-h-screen bg-black">
+        <div className="min-h-screen bg-black-600">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-950/30 to-red-950/30" />
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative z-10">
-              <div className="absolute -left-8 -top-8 w-32 h-32 bg-orange-800/30 rounded-full opacity-50 blur-xl" />
-              <div className="absolute -right-4 bottom-8 w-24 h-24 bg-red-800/30 rounded-full opacity-50 blur-lg" />
+              <div className="absolute -left-8 -top-8 w-32 h-32 bg-orange-900/30 rounded-full opacity-50 blur-xl" />
+              <div className="absolute -right-4 bottom-8 w-24 h-24 bg-red-600/30 rounded-full opacity-50 blur-lg" />
               <h1 className="text-7xl font-bold mb-8 leading-tight text-white">
                 We Shape The
                 <span className="block mt-2 bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text">
                   Future of Social Media
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+              <p className="text-xl text-gray-400 mb-10 leading-relaxed">
                 Transforming how businesses connect with their audience through
                 AI-powered insights and seamless automation.
               </p>
               <div className="flex gap-4">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+                <Button size="lg" className="bg-red-600 hover:bg-orange-600 text-white">
                   Get Started <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="text-orange-400 border-orange-400 hover:bg-orange-950">
+                <Button size="lg" variant="outline" className="text-red-600 border-red-900 hover:bg-orange-950">
                   Learn More <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -206,17 +206,17 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="bg-orange-900 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <Card key={index} className="bg-gradient-to-r from-red-900 to-black-400 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-6">
-                    <div className="bg-orange-600 p-4 rounded-2xl">
+                    <div className="bg-red-600 p-4 rounded-2xl">
                       {stat.icon}
                     </div>
                     <div>
                       <h3 className="text-4xl font-bold mb-1 bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text">
                         {stat.number}
                       </h3>
-                      <p className="text-gray-300">{stat.label}</p>
+                      <p className="text-gray-400">{stat.label}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -227,21 +227,21 @@ const AboutPage = () => {
       </section>
 
       {/* Mission and Vision Section */}
-      <section className="py-20 bg-gradient-to-b from-orange-950 to-black">
+      <section className="py-20 bg-gradient-to-b from-black-950 to-black">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">
             Our Purpose
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
             {missions.map((mission, index) => (
-              <Card key={index} className="bg-orange-900 border-none shadow-lg hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="bg-black-600 border-red shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-10">
                   <div className="flex flex-col items-center text-center">
-                    <div className="mb-8 p-6 bg-orange-800 rounded-full transform hover:rotate-12 transition-transform duration-300">
+                    <div className="mb-8 p-6 bg-red-600 rounded-full transform hover:rotate-12 transition-transform duration-300">
                       {mission.icon}
                     </div>
                     <CardTitle className="text-3xl mb-6 text-white">{mission.title}</CardTitle>
-                    <p className="text-gray-300 text-lg leading-relaxed">{mission.description}</p>
+                    <p className="text-gray-400 text-lg leading-relaxed">{mission.description}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -252,18 +252,18 @@ const AboutPage = () => {
 
       {/* Values Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-900 to-black opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black-900 to-black opacity-50" />
         <div className="container mx-auto px-4 relative">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">Our Values</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="bg-orange-900/80 backdrop-blur border-none shadow-lg hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="bg-black-600/80 backdrop-blur border-black-600 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-8">
-                  <div className="mb-6 p-4 bg-orange-800 rounded-2xl inline-block">
+                  <div className="mb-6 p-4 bg-red-800 rounded-2xl inline-block">
                     {value.icon}
                   </div>
                   <CardTitle className="text-2xl mb-4 text-white">{value.title}</CardTitle>
-                  <p className="text-gray-300 leading-relaxed">{value.description}</p>
+                  <p className="text-gray-400 leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -279,9 +279,9 @@ const AboutPage = () => {
             {features.map((feature, index) => (
               <div key={index} className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
                 <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
-                  <h3 className="text-3xl font-bold mb-6 text-orange-400">{feature.title}</h3>
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">{feature.description}</p>
-                  <Button variant="outline" size="lg" className="text-orange-400 border-orange-400 hover:bg-orange-950">
+                  <h3 className="text-3xl font-bold mb-6 text-red-800">{feature.title}</h3>
+                  <p className="text-xl text-gray-400 mb-8 leading-relaxed">{feature.description}</p>
+                  <Button variant="outline" size="lg" className="text-red-800 border-red-800 hover:bg-orange-950">
                     Learn More <ChevronRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
@@ -300,12 +300,12 @@ const AboutPage = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gradient-to-b from-orange-900 to-black">
+      <section className="py-20 bg-gradient-to-b from-black-900 to-black">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">Meet Our Team</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="bg-orange-800 border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <Card key={index} className="bg-black-600 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <div className="relative h-80">
                   <img
                     src={member.imageUrl}
@@ -315,11 +315,11 @@ const AboutPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-orange-300 font-medium">{member.role}</p>
+                    <p className="text-orange-600 font-medium">{member.role}</p>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <p className="text-gray-300">{member.bio}</p>
+                  <p className="text-gray-400">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}
@@ -334,7 +334,7 @@ const AboutPage = () => {
           <h2 className="text-4xl font-bold text-center mb-16 text-white">Our Location</h2>
           <div className="grid md:grid-cols-1">
             {officeLocations.map((office, index) => (
-              <Card key={index} className="bg-orange-800 border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <Card key={index} className="bg-black-600 border-orange-800 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <div className="relative h-64">
                   <img 
                     src={map}
@@ -347,16 +347,16 @@ const AboutPage = () => {
                 <CardContent className="p-8">
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
-                      <MapPin className="w-5 h-5 text-orange-400" />
-                      <p className="text-gray-300">{office.address}</p>
+                      <MapPin className="w-5 h-5 text-orange-600" />
+                      <p className="text-gray-400">{office.address}</p>
                     </div>
                     <div className="flex items-center gap-4">
-                      <Phone className="w-5 h-5 text-orange-400" />
-                      <p className="text-gray-300">{office.phone}</p>
+                      <Phone className="w-5 h-5 text-orange-600" />
+                      <p className="text-gray-400">{office.phone}</p>
                     </div>
                     <div className="flex items-center gap-4">
-                      <Mail className="w-5 h-5 text-orange-400" />
-                      <p className="text-gray-300">{office.email}</p>
+                      <Mail className="w-5 h-5 text-orange-600" />
+                      <p className="text-gray-400">{office.email}</p>
                     </div>
                   </div>
                 </CardContent>
