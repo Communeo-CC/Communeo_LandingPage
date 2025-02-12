@@ -41,8 +41,5 @@
     "vite": "^6.0.5"
   },
   "pnpm": {
-    "ignoredBuiltDependencies": [
-      "esbuild"
-    ]
   }
 }
