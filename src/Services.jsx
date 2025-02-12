@@ -2,9 +2,9 @@ import React from 'react'
 import Footer from "./components/Kaveesha/Footer";
 import Header from "./components/Kaveesha/Header";
 
-import { HeroSection } from "./components/Kaveesha/HeroSection"
-import { FeaturesSection } from "./components/Kaveesha/FeaturesSection"
-import { AnalyticsSection } from "./components/Kaveesha/AnalyticsSection"
+import {HeroSection}  from "./components/Kaveesha/HeroSection"
+import {FeaturesSection}  from "./components/Kaveesha/FeaturesSection"
+import  {AnalyticsSection}  from "./components/Kaveesha/AnalyticsSection"
 
 const ServicesPage = () => {
   return (
