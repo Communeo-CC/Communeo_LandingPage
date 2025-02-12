@@ -48,10 +48,10 @@ function GradualSpacing({
               animate={isInView ? { opacity: 1 } : {}}
               exit={{ opacity: 0 }}
               transition={{
-                duration: 0.8,
+                duration: 1.0,
                 delay: textLines[0].length * 0.1, // Delay after "Contact Us" animation finishes
               }}
-              className="text-[1rem] sm:text-[1.2rem] md:text-[1.4rem] xl:text-[1.5rem] 
+              className="text-[1rem] sm:text-[0.8rem] md:text-[1.4rem] xl:text-[1.3rem] 
                          text-left sm:text-center text-white mt-2 max-w-full sm:max-w-md lg:max-w-2xl"
             >
               {textLines[1]}

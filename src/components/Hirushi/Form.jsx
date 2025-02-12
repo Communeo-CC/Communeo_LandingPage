@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactForm() {
   return (
-    <section className="mt-[-40px] py-0 pb-20 relative">
+    <section className="mt-[-30px] py-15 pb-40 relative">
       <div className="max-w-screen-md mx-auto px-4 text-gray-400 md:px-8">
         <div className="relative max-w-2xl mx-auto sm:text-center">
           <div

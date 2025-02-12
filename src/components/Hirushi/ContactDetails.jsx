@@ -5,22 +5,22 @@ import { Mail, PhoneCall, MapPin } from "lucide-react"; // Icons
 export default function ContactInfo() {
   const contactDetails = [
     {
-      icon: <Mail className="w-10 h-10 text-red-500" />,
+      icon: <Mail className="w-15 h-15 text-red-500" />,
       title: "Email",
       info: "hello@communeo.lk",
       link: "mailto:hello@communeo.lk",
     },
     {
-      icon: <PhoneCall className="w-10 h-10 text-red-500" />,
+      icon: <PhoneCall className="w-15 h-15 text-red-500" />,
       title: "Phone",
-      info: "+1 (555) 000-0000",
-      link: "tel:+15550000000",
+      info: "+94 779 688 262",
+      link: "+94 779 688 262",
     },
     {
-      icon: <MapPin className="w-10 h-10 text-red-500" />,
+      icon: <MapPin className="w-15 h-15 text-red-500" />,
       title: "Office",
       info: "Spencer Building, Galle Road, Colombo",
-      link: "https://maps.google.com",
+      link: "https://maps.app.goo.gl/3dg91KdCtsvZM9Sh9",
     },
   ];
 
