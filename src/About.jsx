@@ -160,7 +160,7 @@ const AboutPage = () => {
         <div className="min-h-screen bg-black-600">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-950/30 to-red-950/10" />
+        
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative z-10">
