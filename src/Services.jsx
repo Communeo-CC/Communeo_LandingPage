@@ -286,7 +286,7 @@ const CTASection = () => (
 
 
 const ServicesPage = () => (
-  <div className="min-h-screen bg-black-600 text-white">
+  <div className="min-h-screen bg-black-600 text-white overflow-x-hidden">
     <Header />
     <HeroSection />
     <StatsSection />
