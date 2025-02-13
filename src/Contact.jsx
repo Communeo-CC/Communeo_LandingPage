@@ -1,15 +1,17 @@
+
 import ButtonGradient from "./assets/svg/ButtonGradient";
 import Benefits from "./components/Hirushi/Benefits";
-import Collaboration from "./components/Hirushi/Collaboration";
+import ContactDetails from "./components/Hirushi/ContactDetails";
 import Footer from "./components/Hirushi/Footer";
 import Header from "./components/Hirushi/Header";
 
-import Pricing from "./components/Hirushi/Pricing";
+import Connect from "./components/Hirushi/Connect";
 import Roadmap from "./components/Hirushi/Roadmap";
-import Services from "./components/Hirushi/Services";
+import LocationDetails from "./components/Hirushi/LocationDetails";
 
-import FUIFeatureSectionWithCards from "./components/Hirushi/FUIFeatureSectionWithCards";
+import Form from "./components/Hirushi/Form";
 import GradualSpacing from "./components/ui/GradualSpacing";
+
 
 
 
@@ -22,11 +24,11 @@ const App = () => {
         <GradualSpacing/>
         {/* SpotlightPreview is a custom component */}
         <Benefits />
-        <FUIFeatureSectionWithCards />
-        <Collaboration />
-        <Services />
-        <Pricing />
-        <Roadmap />
+        <Form />
+        <ContactDetails />
+        <LocationDetails />
+        <Connect />
+        {/* <Roadmap /> */}
         <Footer />
       </div>
 
