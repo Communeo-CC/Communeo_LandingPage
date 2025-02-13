@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   BarChart2, Users, Globe, TrendingUp, Search, PieChart,
   MessageCircle, Target, Mail, Phone, MapPin, Github,
-  Twitter, Linkedin, Heart
+  Twitter, Linkedin, Heart, ArrowRight, CheckCircle, Star,
+  Award, Zap, Coffee
 } from 'lucide-react';
 
 import Footer from "./components/Sanuri/Footer";
@@ -17,72 +18,181 @@ import choose3 from "./components/Sanuri/images/choose3.png";
 import sanuri from "./components/Sanuri/images/sanuri.jpg";
 import kaveesha from "./components/Sanuri/images/kaveesha.jpg";
 import hirushi from "./components/Sanuri/images/hirushi.jpg";
-import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo"
+import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
 
-//  components
+// Enhanced Feature Card with Hover Animation
 const FeatureCard = ({ icon: Icon, title, description }) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
     <div 
-      className={`bg-gradient-to-br from-black-600 to-black-600 p-6 rounded-xl backdrop-blur-sm transition-all duration-300 ${
+      className={`relative bg-gradient-to-br from-black-600 to-black-600 p-6 rounded-xl backdrop-blur-sm transition-all duration-500 ${
         isHovered ? 'transform scale-105 shadow-xl shadow-orange-500/20' : ''
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-xl" />
       <div className="flex items-center gap-4 mb-4">
-        <div className={`p-3 rounded-lg transition-colors duration-300 ${
-          isHovered ? 'bg-orange-500/20' : 'bg-orange-500/10'
+        <div className={`p-3 rounded-lg transition-all duration-300 ${
+          isHovered ? 'bg-orange-500/20 rotate-12' : 'bg-orange-500/10'
         }`}>
-          <Icon className={`transition-colors duration-300 ${
-            isHovered ? 'text-orange-400' : 'text-orange-500'
+          <Icon className={`transition-all duration-300 ${
+            isHovered ? 'text-orange-400 scale-110' : 'text-orange-500'
           }`} size={24} />
         </div>
         <h3 className="text-xl font-bold text-white">{title}</h3>
       </div>
       <p className="text-gray-400">{description}</p>
+      {isHovered && (
+        <ArrowRight className="absolute bottom-4 right-4 text-orange-500 animate-pulse" size={20} />
+      )}
     </div>
   );
 };
 
+// New Component: Floating Particles Background
+const ParticlesBackground = () => {
+  return (
+    <div className="fixed inset-0 pointer-events-none">
+      {[...Array(20)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-2 h-2 bg-orange-500/20 rounded-full animate-float"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${5 + Math.random() * 10}s`
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+// Enhanced Hero Section with Parallax Effect
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     setIsVisible(true);
+    const handleScroll = () => setOffset(window.pageYOffset);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className="relative min-h-[60vh] flex items-center justify-center text-center px-4 mb-16">
+    <div className="relative min-h-[80vh] flex items-center justify-center text-center px-4 mb-16 overflow-hidden">
       <img 
-        src= {banner} 
+        src={banner} 
         alt="Hero background" 
-        className="absolute inset-0 w-full h-full object-cover opacity-20"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 transform scale-110"
+        style={{ transform: `translateY(${offset * 0.5}px)` }}
       />
       <div className={`relative z-10 max-w-4xl mx-auto transition-all duration-1000 transform ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}>
-        <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+        <div className="flex items-center justify-center mb-6">
+          <Star className="text-orange-500 animate-spin-slow" size={32} />
+        </div>
+        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
           Elevate Your Brand
         </h1>
         <p className="text-xl text-gray-400 mb-8">
           Effortlessly Connect with Influencers Today
         </p>
-        <button className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 text-white font-bold py-4 px-8 rounded-full hover:opacity-90 transition-opacity">
-          Get Started
-        </button>
+        <div className="flex items-center justify-center gap-4">
+          <button className="group relative bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 text-white font-bold py-4 px-8 rounded-full hover:opacity-90 transition-all duration-300 hover:scale-105">
+            <span className="relative z-10">Get Started</span>
+            <div className="absolute inset-0 bg-white rounded-full opacity-0 group-hover:opacity-20 transition-opacity" />
+          </button>
+          <button className="group relative border-2 border-orange-500 text-white font-bold py-4 px-8 rounded-full hover:bg-orange-500/10 transition-all duration-300">
+            Learn More
+            <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
+// New Component: Achievement Cards
+const AchievementCard = ({ icon: Icon, title, value, suffix }) => (
+  <div className="bg-gradient-to-br from-black-600 to-black-600 p-6 rounded-xl backdrop-blur-sm border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+    <Icon className="text-orange-500 mb-4" size={32} />
+    <h3 className="text-4xl font-bold text-white mb-2">
+      {value}{suffix}
+    </h3>
+    <p className="text-gray-400">{title}</p>
+  </div>
+);
+
+// Enhanced Stats Section with Achievement Cards
+const StatsSection = () => {
+  const [animatedStats, setAnimatedStats] = useState({
+    users: 0,
+    campaigns: 0,
+    engagement: 0,
+    coffee: 0
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setAnimatedStats(prev => ({
+        users: Math.min(prev.users + 1000, 50000),
+        campaigns: Math.min(prev.campaigns + 100, 5000),
+        engagement: Math.min(prev.engagement + 1, 95),
+        coffee: Math.min(prev.coffee + 10, 1000)
+      }));
+    }, 50);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="bg-gradient-to-br from-black-600 to-black-600 py-16 px-4 mb-16">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+        <AchievementCard
+          icon={Users}
+          title="Active Users"
+          value={animatedStats.users.toLocaleString()}
+          suffix="+"
+        />
+        <AchievementCard
+          icon={Target}
+          title="Campaigns Launched"
+          value={animatedStats.campaigns.toLocaleString()}
+          suffix="+"
+        />
+        <AchievementCard
+          icon={TrendingUp}
+          title="Average Engagement"
+          value={animatedStats.engagement}
+          suffix="%"
+        />
+        <AchievementCard
+          icon={Coffee}
+          title="Happy Clients"
+          value={animatedStats.coffee}
+          suffix="+"
+        />
+      </div>
+    </div>
+  );
+};
+
+// Enhanced Analytics Section with Hover Effects
 const AnalyticsSection = () => (
   <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 mb-16">
     <div className="space-y-6">
-      <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
-        Master Your Campaigns with Real-Time Insights
-      </h2>
+      <div className="relative">
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent mb-2">
+          Master Your Campaigns
+        </h2>
+        <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-yellow-500" />
+      </div>
       <p className="text-gray-300">
         Effortlessly execute and monitor your marketing campaigns. Gain valuable insights with real-time analytics to optimize performance.
       </p>
@@ -99,16 +209,19 @@ const AnalyticsSection = () => (
         />
       </div>
     </div>
-    <div className="relative">
+    <div className="relative group">
+      <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity" />
       <img 
-        src= {choose3} 
+        src={choose3} 
         alt="Analytics dashboard" 
-        className="rounded-xl shadow-2xl"
+        className="relative rounded-xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
       />
     </div>
   </div>
 );
 
+// Rest of the components remain the same...
+// (LocalizationSection, TestimonialSection, CTASection)
 const LocalizationSection = () => (
   <div className="bg-gradient-to-br from-black-600 to-black-600 py-16 px-4 mb-16">
     <div className="max-w-6xl mx-auto">
@@ -214,54 +327,6 @@ const TestimonialSection = () => {
   );
 };
 
-const StatsSection = () => {
-  const [animatedStats, setAnimatedStats] = useState({
-    users: 0,
-    campaigns: 0,
-    engagement: 0
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setAnimatedStats(prev => ({
-        users: Math.min(prev.users + 1000, 50000),
-        campaigns: Math.min(prev.campaigns + 100, 5000),
-        engagement: Math.min(prev.engagement + 1, 95)
-      }));
-    }, 50);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className="bg-gradient-to-br from-black-600 to-black-600 py-16 px-4 mb-16">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-        <div className="p-6">
-          <Users className="mx-auto text-orange-500 mb-4" size={32} />
-          <h3 className="text-4xl font-bold text-white mb-2">
-            {animatedStats.users.toLocaleString()}+
-          </h3>
-          <p className="text-gray-400">Active Users</p>
-        </div>
-        <div className="p-6">
-          <Target className="mx-auto text-orange-500 mb-4" size={32} />
-          <h3 className="text-4xl font-bold text-white mb-2">
-            {animatedStats.campaigns.toLocaleString()}+
-          </h3>
-          <p className="text-gray-400">Campaigns Launched</p>
-        </div>
-        <div className="p-6">
-          <TrendingUp className="mx-auto text-orange-500 mb-4" size={32} />
-          <h3 className="text-4xl font-bold text-white mb-2">
-            {animatedStats.engagement}%
-          </h3>
-          <p className="text-gray-400">Average Engagement</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const CTASection = () => (
   <div className="relative py-16 px-4">
     <img 
@@ -284,21 +349,21 @@ const CTASection = () => (
 );
 
 
-
+// Enhanced main component with new features
 const ServicesPage = () => (
-
   <>
-  <FluidCursorDemo />
-  <div className="min-h-screen bg-black-600 text-white overflow-x-hidden">
-    <Header />
-    <HeroSection />
-    <StatsSection />
-    <AnalyticsSection />
-    <LocalizationSection />
-    <TestimonialSection />
-    <CTASection />
-    <Footer />
-  </div>
+    <FluidCursorDemo />
+    <div className="min-h-screen bg-black-600 text-white overflow-x-hidden">
+      <ParticlesBackground />
+      <Header />
+      <HeroSection />
+      <StatsSection />
+      <AnalyticsSection />
+      <LocalizationSection />
+      <TestimonialSection />
+      <CTASection />
+      <Footer />
+    </div>
   </>
 );
 
