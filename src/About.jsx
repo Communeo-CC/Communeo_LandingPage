@@ -20,7 +20,6 @@ import Header from "./components/Sanuri/Header";
 import { Button } from './components/Sanuri/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from './components/Sanuri/ui/card';
 import ButtonGradient from "././assets/svg/ButtonGradient";
-import FluidCursorDemo from "./components/Sanuri/FluidCursorDemo"
 import pic1 from "./components/Sanuri/images/pic1.jpg";
 import map from "./components/Sanuri/images/map.png";
 import visal from "./components/Sanuri/images/visal.jpg";
@@ -32,6 +31,8 @@ import vidul from "./components/Sanuri/images/vidul.png";
 import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose3.png";
+import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo"
+
 
 
 const AboutPage = () => {
@@ -154,6 +155,7 @@ const AboutPage = () => {
 
   return (
     <>
+    <FluidCursorDemo />
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
 

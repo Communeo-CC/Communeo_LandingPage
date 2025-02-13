@@ -11,14 +11,14 @@ import LocationDetails from "./components/Hirushi/LocationDetails";
 
 import Form from "./components/Hirushi/Form";
 import GradualSpacing from "./components/ui/GradualSpacing";
-
+import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo"
 
 
 
 const App = () => {
   return (
     <>
-      
+     <FluidCursorDemo/> 
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <GradualSpacing/>
