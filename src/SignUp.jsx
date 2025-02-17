@@ -83,7 +83,7 @@ const SignUpPage = () => {
 
   return (
     <div className="grid md:grid-cols-1 gap-12">
-      <FluidCursorDemo />
+      
       <AnimatedBackground />
       <Header />
       
@@ -170,7 +170,7 @@ const SignUpPage = () => {
                       onChange={handleChange}
                       placeholder="+1 (555) 000-0000"
                     />
-                  </div>
+                  </div> 
 
                   {/* Role Selection */}
                   <div>

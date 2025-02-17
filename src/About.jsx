@@ -1,5 +1,3 @@
-//about.jsx
-
 import React from 'react';
 import { 
   ArrowRight, 
@@ -21,7 +19,6 @@ import { Button } from './components/Sanuri/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from './components/Sanuri/ui/card';
 import ButtonGradient from "././assets/svg/ButtonGradient";
 import pic1 from "./components/Sanuri/images/pic1.jpg";
-import map from "./components/Sanuri/images/map.png";
 import visal from "./components/Sanuri/images/visal.jpg";
 import sanuri from "./components/Sanuri/images/sanuri.jpg";
 import kaveesha from "./components/Sanuri/images/kaveesha.jpg";
@@ -30,8 +27,9 @@ import thamindu from "./components/Sanuri/images/thamindu.jpg";
 import vidul from "./components/Sanuri/images/vidul.png";
 import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
-import choose3 from "./components/Sanuri/images/choose3.png";
-import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo"
+import choose3 from "./components/Sanuri/images/choose2.gif";
+import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
+
 
 
 
@@ -155,7 +153,7 @@ const AboutPage = () => {
 
   return (
     <>
-    <FluidCursorDemo />
+  
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
 
@@ -330,48 +328,52 @@ const AboutPage = () => {
       </section>
 
 
-      {/* Office Locations Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-10">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">Our Location</h2>
-          <div className="grid md:grid-cols-1">
-            {officeLocations.map((office, index) => (
-              <Card key={index} className="bg-black-600 border-orange-800 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="relative h-64">
-                  <img 
-                    src={map}
-                    alt={office.city}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                  <h3 className="absolute bottom-6 left-6 text-3xl font-bold text-white">{office.city}</h3>
-                </div>
-                <CardContent className="p-8">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4">
-                      <MapPin className="w-5 h-5 text-orange-600" />
-                      <p className="text-gray-400">{office.address}</p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <Phone className="w-5 h-5 text-orange-600" />
-                      <p className="text-gray-400">{office.phone}</p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <Mail className="w-5 h-5 text-orange-600" />
-                      <p className="text-gray-400">{office.email}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+       {/* Office Locations Section */}
+<section className="py-20">
+  <div className="container mx-auto px-10">
+    <h2 className="text-4xl font-bold text-center mb-16 text-white">Our Location</h2>
+    <div className="grid md:grid-cols-1">
+      {officeLocations.map((office, index) => (
+        <Card key={index} className="bg-black-600 border-orange-800 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div className="relative h-64">
+            <iframe 
+              title="Colombo Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126744.91730640693!2d79.77364738552652!3d6.927078400905912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2594476d03231%3A0x6a1c7e74f9b1b1ff!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2s!4v1708191885862!5m2!1sen!2s" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
-        </div>
-      </section>
+          <CardContent className="p-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <MapPin className="w-5 h-5 text-orange-600" />
+                <p className="text-gray-400">{office.address}</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Phone className="w-5 h-5 text-orange-600" />
+                <p className="text-gray-400">{office.phone}</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Mail className="w-5 h-5 text-orange-600" />
+                <p className="text-gray-400">{office.email}</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
     </div>
-      
+  </div>
+</section>
+
+        </div>
         <Footer />
       </div>
       <ButtonGradient />
+      
     </>
   );
 };

@@ -26,7 +26,7 @@ const SignInPage = () => {
 
   return (
     <div className="grid md:grid-cols-1 gap-12">
-     <FluidCursorDemo /> 
+     
       <Header />
       <div className="min-h-screen bg-black-600">
         {/* Hero Section */}

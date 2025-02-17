@@ -15,10 +15,10 @@ import banner from "./components/Sanuri/images/banner.avif";
 import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose3.png";
-import sanuri from "./components/Sanuri/images/sanuri.jpg";
+import hirushi1 from "./components/Sanuri/images/hirushi1.jpg";
 import kaveesha from "./components/Sanuri/images/kaveesha.jpg";
-import hirushi from "./components/Sanuri/images/hirushi.jpg";
 import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
+import sanuri1 from "./components/Sanuri/images/sanuri1.jpg";
 
 // Enhanced Feature Card with Hover Animation
 const FeatureCard = ({ icon: Icon, title, description }) => {
@@ -252,23 +252,25 @@ const LocalizationSection = () => (
 const TestimonialSection = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Emma Williams",
       role: "Marketing Director",
-      content: "This platform transformed our influencer marketing strategy completely.",
-      avatar: sanuri
+      content: "This platform revolutionized our approach to influencer marketing. The insights and campaign tracking features have saved us countless hours while improving ROI.",
+      avatar: sanuri1
     },
     {
-      name: "David Chen",
+      name: "Jenny Rodriguez",
       role: "Content Creator",
-      content: "The analytics tools helped me grow my audience by 300% in 6 months.",
+      content: "Thanks to the detailed analytics and audience insights, I was able to triple my engagement and secure brand deals more effectively than ever before.",
       avatar: kaveesha
     },
     {
-      name: "Lisa Patel",
+      name: "Sophia Lee",
       role: "Brand Manager",
-      content: "The multi-language support helped us reach new markets effectively.",
-      avatar: hirushi
+      content: "The multi-language support and audience segmentation tools have allowed us to expand into international markets with ease, creating highly targeted campaigns.",
+      avatar: hirushi1
     }
+    
+    
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -298,11 +300,13 @@ const TestimonialSection = () => {
             <div className="bg-gradient-to-br from-black-600 to-black-600 p-8 rounded-xl backdrop-blur-sm">
               <p className="text-gray-300 text-lg mb-6 italic">"{testimonial.content}"</p>
               <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full"
-                />
+               <img
+  src={testimonial.avatar}
+  alt={testimonial.name}
+  className="rounded-full"
+  style={{ width: "100px", height: "100px" }}
+/>
+
                 <div>
                   <h4 className="font-bold text-white">{testimonial.name}</h4>
                   <p className="text-gray-400">{testimonial.role}</p>
@@ -352,7 +356,7 @@ const CTASection = () => (
 // Enhanced main component with new features
 const ServicesPage = () => (
   <>
-    <FluidCursorDemo />
+   
     <div className="min-h-screen bg-black-600 text-white overflow-x-hidden">
       <ParticlesBackground />
       <Header />
