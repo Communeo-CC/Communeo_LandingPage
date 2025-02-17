@@ -27,13 +27,13 @@ function ContactSection() {
     { top: "10%", left: "60%" },  //mail
     { top: "35%", left: "75%" },  //phone
     { top: "50%", left: "50%" },  //mappin
-    { top: "85%", left: "80%" },  // instagram
-    { top: "20%", left: "40%" },  // linkedin
+    { top: "85%", left: "80%" },  //instagram
+    { top: "20%", left: "40%" },  //linkedin
     { top: "35%", left: "25%" },  //globe
-    { top: "10%", left: "90%" },  // user
+    { top: "15%", left: "85%" },  // user
     { top: "50%", left: "90%" },  //Qrcode
     { top: "80%", left: "35%" },  //message
-    { top: "65%", left: "65%" },
+    { top: "65%", left: "65%" },  //home
   ];
 
   const icons = [Mail, Phone, MapPin, Instagram, Linkedin, Globe, User, QrCode, MessageCircle, HomeIcon];
@@ -102,7 +102,7 @@ function ContactSection() {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
           >
-            <Icon className={`w-16 h-16 ${iconColors[index]}`} />
+            <Icon className={`w-20 h-20 ${iconColors[index]}`} />
           </motion.div>
         ))}
       </div>
