@@ -5,7 +5,7 @@ import Footer from "./components/Hirushi/Footer";
 import Header from "./components/Hirushi/Header";
 
 import Connect from "./components/Hirushi/Connect";
-import Roadmap from "./components/Hirushi/Roadmap";
+import connectWithIcons from "./components/Hirushi/connectWithIcons";
 import LocationDetails from "./components/Hirushi/LocationDetails";
 
 import Form from "./components/Hirushi/Form";
@@ -27,7 +27,7 @@ const App = () => {
         <ContactDetails />
         <LocationDetails />
         <Connect />
-        {/* <Roadmap /> */}
+        {/* <connectWithIcons /> */}
         <Footer />
       </div>
 
