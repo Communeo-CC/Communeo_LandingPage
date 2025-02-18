@@ -27,7 +27,7 @@ const App = () => {
         <ContactDetails />
         <LocationDetails />
         <Connect />
-        {/* <connectWithIcons /> */}
+        <connectWithIcons />
         <Footer />
       </div>
 
