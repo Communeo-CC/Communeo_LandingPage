@@ -28,7 +28,7 @@ export default function ContactForm() {
 
   return (
     <section className="mt-[-30px] py-15 pb-40 relative">
-      <div className="max-w-screen-md mx-auto px-4 text-gray-400 md:px-8">
+      <div className="max-w-screen-md mx-auto px-4 text-red-600 md:px-8">
         <div className="relative max-w-2xl mx-auto sm:text-center">
           <div
             className="absolute inset-0 max-w-xs mx-auto h-44 blur-[118px]"
@@ -46,7 +46,7 @@ export default function ContactForm() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative mt-0"
         >
-          <form className="grid gap-6 bg-transparent p-6 border rounded-xl dark:border-gray-700">
+          <form className="grid gap-6 bg-red p-6 border rounded-xl border-orange-700">
             {/* Name Input */}
             <div>
               <label className="block text-gray-300 text-sm font-medium mb-1">

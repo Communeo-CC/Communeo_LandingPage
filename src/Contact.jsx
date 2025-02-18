@@ -8,7 +8,7 @@ import Connect from "./components/Hirushi/Connect";
 import LocationDetails from "./components/Hirushi/LocationDetails";
 
 import Form from "./components/Hirushi/Form";
-import GradualSpacing from "./components/ui/GradualSpacing";
+import GradualSpace from "./components/ui/GradualSpace";
 
 
 
@@ -19,7 +19,7 @@ const App = () => {
       
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
-        <GradualSpacing/>
+        <GradualSpace/>
         {/* SpotlightPreview is a custom component */}
         <Benefits />
         <Form />

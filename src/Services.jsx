@@ -15,6 +15,7 @@ import banner from "./components/Sanuri/images/banner.avif";
 import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose3.png";
+import videoUrl from "/vedio1.mp4";
 import hirushi1 from "./components/Sanuri/images/hirushi1.jpg";
 import kaveesha from "./components/Sanuri/images/kaveesha.jpg";
 import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
@@ -184,41 +185,67 @@ const StatsSection = () => {
 };
 
 // Enhanced Analytics Section with Hover Effects
-const AnalyticsSection = () => (
-  <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 mb-16">
-    <div className="space-y-6">
-      <div className="relative">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent mb-2">
-          Master Your Campaigns
-        </h2>
-        <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-yellow-500" />
+// Enhanced Analytics Section with Fixed Video Playback
+const AnalyticsSection = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Attempt to play video after component mounts
+    if (videoRef.current) {
+      const playVideo = async () => {
+        try {
+          await videoRef.current.play();
+        } catch (err) {
+          console.log("Video autoplay failed:", err);
+        }
+      };
+      playVideo();
+    }
+  }, []);
+
+  return (
+    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 mb-16">
+      <div className="space-y-6">
+        <div className="relative">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent mb-2">
+            Master Your Campaigns
+          </h2>
+          <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-yellow-500" />
+        </div>
+        <p className="text-gray-300">
+          Effortlessly execute and monitor your marketing campaigns. Gain valuable insights with real-time analytics to optimize performance.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <FeatureCard 
+            icon={BarChart2}
+            title="Real-Time Analytics"
+            description="Stay informed and make data-driven decisions for your campaigns."
+          />
+          <FeatureCard
+            icon={PieChart}
+            title="Advanced Tools"
+            description="Utilize advanced tools to analyze and refine your marketing strategies."
+          />
+        </div>
       </div>
-      <p className="text-gray-300">
-        Effortlessly execute and monitor your marketing campaigns. Gain valuable insights with real-time analytics to optimize performance.
-      </p>
-      <div className="grid grid-cols-2 gap-4">
-        <FeatureCard 
-          icon={BarChart2}
-          title="Real-Time Analytics"
-          description="Stay informed and make data-driven decisions for your campaigns."
-        />
-        <FeatureCard
-          icon={PieChart}
-          title="Advanced Tools"
-          description="Utilize advanced tools to analyze and refine your marketing strategies."
-        />
+      <div className="relative group h-[400px]"> {/* Added fixed height */}
+        <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity" />
+        <video
+          ref={videoRef}
+          className="relative w-full h-full object-cover rounded-lg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src={videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
-    <div className="relative group">
-      <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity" />
-      <img 
-        src={choose3} 
-        alt="Analytics dashboard" 
-        className="relative rounded-xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 // Rest of the components remain the same...
 // (LocalizationSection, TestimonialSection, CTASection)

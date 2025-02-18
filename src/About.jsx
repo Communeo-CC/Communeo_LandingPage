@@ -29,7 +29,7 @@ import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose2.gif";
 import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
-
+import communeoVideo from "/COMMUNEO.mp4";
 
 
 
@@ -154,78 +154,81 @@ const AboutPage = () => {
   return (
     <>
   
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-
-        <div className="min-h-screen bg-black-600">
+  <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+  <Header />
+  <div className="min-h-screen bg-black-600">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+<section className="relative py-16 overflow-hidden bg-gradient-to-b from-black to-black-600">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row items-center gap-12">
+      {/* Content Side */}
+      <div className="lg:w-1/2 relative z-10">
+        <div className="absolute -left-20 -top-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl" />
+        <div className="absolute -right-20 bottom-20 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
         
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative z-10">
-              <div className="absolute -left-8 -top-8 w-32 h-32 bg-orange-900/30 rounded-full opacity-50 blur-xl" />
-              <div className="absolute -right-4 bottom-8 w-24 h-24 bg-red-600/30 rounded-full opacity-50 blur-lg" />
-              <h1 className="text-7xl font-bold mb-8 leading-tight text-white">
-                We Shape The
-                <span className="block mt-2 bg-gradient-to-r from-orange-600 to-red-400 text-transparent bg-clip-text">
-                  Future of Social Media
-                </span>
-              </h1>
-              <p className="text-xl text-gray-400 mb-10 leading-relaxed">
-                Transforming how businesses connect with their audience through
-                AI-powered insights and seamless automation.
-              </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-red-800 hover:bg-orange-800 text-white">
-                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="text-red-600 border-orange-600 hover:bg-orange-950">
-                  Learn More <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
+        <h1 className="text-6xl lg:text-7xl font-bold mb-6 text-white">
+          Welcome to
+          <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
+            Communeo
+          </span>
+        </h1>
+        
+        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          Empowering businesses through innovative social media solutions. 
+          We combine AI technology with human creativity to deliver exceptional results.
+        </p>
+
+        <div className="flex gap-6 mb-12">
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            Get Started <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500/10"
+          >
+            Learn More <ChevronRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-3 gap-6">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="bg-gradient-to-br from-black to-orange-800 p-4 rounded-xl shadow-lg">
+                {stat.icon}
+                <h3 className="text-2xl font-bold mt-2 bg-gradient-to-r from-red-400 to-orange-400 text-transparent bg-clip-text">
+                  {stat.number}
+                </h3>
+                <p className="text-sm text-gray-400">{stat.label}</p>
               </div>
             </div>
-            <div className="relative lg:h-[600px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-800/20 to-red-800/20 rounded-full blur-3xl opacity-30" />
-              <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                <img 
-                  width = {600}
-                  height={800}
-                  src={pic1}
-                  alt="Social Media Marketing"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* Stats Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <Card key={index} className="bg-gradient-to-r from-red-900 to-black-400 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-6">
-                    <div className="bg-red-800 p-4 rounded-2xl">
-                      {stat.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-4xl font-bold mb-1 bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text">
-                        {stat.number}
-                      </h3>
-                      <p className="text-gray-400">{stat.label}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+      {/* Video Side */}
+      <div className="lg:w-1/2 relative">
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
+          <div className="aspect-video relative">
+            <video 
+              className="w-full h-full object-cover rounded-2xl"
+              controls
+              autoPlay
+              loop
+            >
+              <source src={communeoVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black-600 via-transparent to-transparent pointer-events-none" />
         </div>
-      </section>
-
+      </div>
+    </div>
+  </div>
+</section>
       {/* Mission and Vision Section */}
       <section className="py-20 bg-gradient-to-b from-black-950 to-black">
         <div className="container mx-auto px-4">
