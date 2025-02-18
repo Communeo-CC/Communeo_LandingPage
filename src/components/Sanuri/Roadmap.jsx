@@ -1,14 +1,14 @@
 import Button from "./Button";
 import Heading from "./Heading";
 import Section from "./Section";
-import { roadmap } from "../../constants";  // Ensure roadmap is correctly imported
-import { Gradient } from ".././design/Roadmap";
+import { roadmap } from "../constants";  // Ensure roadmap is correctly imported
+import { Gradient } from "./design/Roadmap";
 
 // Import Accordion components from the provided code
 import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-import { ny } from '../../lib/utils';
+import { ny } from '../lib/utils';
 
 const Accordion = AccordionPrimitive.Root;
 
