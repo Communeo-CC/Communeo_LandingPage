@@ -1,31 +1,80 @@
 'use client';
 
-import React from 'react';
+import { AnimatePresence, motion, useInView } from 'framer-motion';
+import React, { useRef } from 'react';
 
-function GradualSpace({
-  videoUrl = "/vedio.gif"
+function GradualSpacing({
+  textLines = ['Contact Us', 'Reach out to us for further clarification, support or feedback'],
 }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  // Create array of orange shades for gradient effect
+  const orangeGradient = [
+    'text-orange-400',
+    'text-orange-500',
+    'text-orange-600',
+    'text-orange-500',
+    'text-orange-400',
+    'text-orange-500',
+    'text-orange-600',
+    'text-orange-500',
+    'text-orange-400',
+  ];
+
   return (
     <section
       id="features"
-      
+      className="relative z-2 py-10 sm:py-20 lg:py-16 xl:py-20 mt-[calc(40px-1rem)] sm:mt-10 md:mt-40 lg:mt-10 mx-auto mb-[calc(35px+10px)] hidden sm:block"
     >
-      {/* Background Video with reduced width */}
-      <div className="mx-auto w-2/4 h-[50vh] overflow-hidden relative">
-        <image
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <img src={videoUrl} />
-        </image>
-        {/* Light overlay */}
-        <div className="absolute inset-0 bg-black-600"></div>
+      <div className="container sm:mt-20 md:mt-40 lg:mt-10 mx-auto">
+        <div className="flex flex-col items-start sm:items-center space-y-4">
+          <AnimatePresence>
+            {/* First Line - "Contact Us" animates letter-by-letter */}
+            <div className="flex space-x-1 w-full sm:w-auto">
+              {textLines[0].split('').map((char, i) => (
+                <motion.p
+                  ref={ref}
+                  key={`first-${i}`}
+                  initial={{ opacity: 0, x: -18 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  exit="hidden"
+                  transition={{
+                    duration: 0.2,
+                    delay: i * 0.1,
+                  }}
+                  className={`font-semibold ${orangeGradient[i % orangeGradient.length]}
+                            text-[1.60rem]
+                            sm:text-[1.70rem]
+                            md:text-[3.05rem]
+                            xl:text-[3.0rem]
+                            leading-[2.25rem] sm:leading-[2.75rem] md:leading-[4.0625rem] xl:leading-[4.5rem]
+                            text-left sm:text-center tracking-tighter max-w-full sm:max-w-md lg:max-w-2xl`}
+                >
+                  {char === ' ' ? <span>&nbsp;</span> : char}
+                </motion.p>
+              ))}
+            </div>
+
+            {/* Second Line - "Reach out to us..." fades in all at once */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              exit={{ opacity: 0 }}
+              transition={{
+                duration: 1.0,
+                delay: textLines[0].length * 0.1,
+              }}
+              className="text-[1rem] sm:text-[0.8rem] md:text-[1.4rem] xl:text-[1.3rem]
+                        text-left sm:text-center text-orange-300 mt-2 max-w-full sm:max-w-md lg:max-w-2xl"
+            >
+              {textLines[1]}
+            </motion.p>
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
 }
 
-export default GradualSpace;
+export default GradualSpacing;

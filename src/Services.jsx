@@ -360,11 +360,7 @@ const TestimonialSection = () => {
 
 const CTASection = () => (
   <div className="relative py-16 px-4">
-    <img 
-      src={choose2} 
-      alt="CTA background" 
-      className="absolute inset-0 w-full h-full object-cover opacity-10"
-    />
+    
     <div className="relative z-10 max-w-4xl mx-auto text-center">
       <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
         Join Us and Transform Your Strategy

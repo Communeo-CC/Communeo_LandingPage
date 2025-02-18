@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useEffect, useRef } from 'react';
 import { 
   ArrowRight, 
   Target, 
@@ -30,27 +31,13 @@ import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose2.gif";
 import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
 import communeoVideo from "/COMMUNEO.mp4";
+import AnimatedStatsSection from './components/Sanuri/AnimatedStatsSection';
+import AutoPauseVideo from './components/Sanuri/AutoPauseVideo';
 
 
 
 const AboutPage = () => {
-  const stats = [
-    {
-      icon: <Users className="h-6 w-6 text-orange-400" />,
-      number: "100K+",
-      label: "Active Users"
-    },
-    {
-      icon: <Globe className="h-6 w-6 text-red-400" />,
-      number: "150+",
-      label: "Countries Served"
-    },
-    {
-      icon: <BarChart className="h-6 w-6 text-yellow-400" />,
-      number: "10M+",
-      label: "Posts Analyzed"
-    }
-  ];
+  
 
   const missions = [
     {
@@ -194,41 +181,21 @@ const AboutPage = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-gradient-to-br from-black to-orange-800 p-4 rounded-xl shadow-lg">
-                {stat.icon}
-                <h3 className="text-2xl font-bold mt-2 bg-gradient-to-r from-red-400 to-orange-400 text-transparent bg-clip-text">
-                  {stat.number}
-                </h3>
-                <p className="text-sm text-gray-400">{stat.label}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        
       </div>
 
-      {/* Video Side */}
-      <div className="lg:w-1/2 relative">
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
-          <div className="aspect-video relative">
-            <video 
-              className="w-full h-full object-cover rounded-2xl"
-              controls
-              autoPlay
-              loop
-            >
-              <source src={communeoVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black-600 via-transparent to-transparent pointer-events-none" />
-        </div>
-      </div>
+     {/* Video Side */}
+<div className="lg:w-1/2 relative">
+  <AutoPauseVideo />
+</div>
+
+  
     </div>
   </div>
 </section>
+
+<AnimatedStatsSection />
+
       {/* Mission and Vision Section */}
       <section className="py-20 bg-gradient-to-b from-black-950 to-black">
         <div className="container mx-auto px-4">
