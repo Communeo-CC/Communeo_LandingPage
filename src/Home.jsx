@@ -7,15 +7,16 @@ import Hero from "./components/Visal/Hero";
 import Pricing from "./components/Visal/Pricing";
 import Roadmap from "./components/Visal/Roadmap";
 import Services from "./components/Visal/Services";
-
 import FUIFeatureSectionWithCards from "./components/Visal/FUIFeatureSectionWithCards";
 import GradualSpacing from "./components/ui/GradualSpacing";
+import FluidCursorDemo from "./components/Sanuri/FluidCursorDemo";
 
 
 
 const Home = () => {
   return (
     <>
+    <FluidCursorDemo />
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <Hero />
