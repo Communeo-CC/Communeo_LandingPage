@@ -85,7 +85,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center text-center px-4 mb-16 overflow-hidden">
+    <div className="relative min-h-[90vh] flex items-center justify-center text-center px-4 mb-16 overflow-hidden">
       <img 
         src={banner} 
         alt="Hero background" 
@@ -98,22 +98,16 @@ const HeroSection = () => {
         <div className="flex items-center justify-center mb-6">
           <Star className="text-orange-500 animate-spin-slow" size={32} />
         </div>
-        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
-          Elevate Your Brand
+        <h1 className="text-6xl lg:text-7xl font-bold mb-6 text-white">
+          Elevate Your
+          <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
+            Brand
+          </span>
         </h1>
-        <p className="text-xl text-gray-400 mb-8">
+        <p className="text-xl text-white mb-8">
           Effortlessly Connect with Influencers Today
         </p>
-        <div className="flex items-center justify-center gap-4">
-          <button className="group relative bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 text-white font-bold py-4 px-8 rounded-full hover:opacity-90 transition-all duration-300 hover:scale-105">
-            <span className="relative z-10">Get Started</span>
-            <div className="absolute inset-0 bg-white rounded-full opacity-0 group-hover:opacity-20 transition-opacity" />
-          </button>
-          <button className="group relative border-2 border-orange-500 text-white font-bold py-4 px-8 rounded-full hover:bg-orange-500/10 transition-all duration-300">
-            Learn More
-            <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-          </button>
-        </div>
+        
       </div>
     </div>
   );

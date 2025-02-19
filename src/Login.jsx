@@ -34,17 +34,20 @@ const SignInPage = () => {
           <img 
             src= {banner}
             alt="Welcome background" 
-            className="w-full h-96 object-cover opacity-20 hover:scale-105 transition-transform duration-700"
+            className="w-full h-[90vh] object-cover opacity-20 hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-black-600" />
           <div className="absolute inset-0 flex items-center justify-center text-center">
             <div className="max-w-3xl px-4 animate-fadeIn">
-              <h1 className="text-4xl md:text-5xl font-bold text-orange-400 mb-4 hover:text-orange-300 transition-colors">
-                Welcome Back
-              </h1>
-              <p className="text-lg text-yellow-200 mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-              </p>
+            <h1 className="text-6xl lg:text-7xl font-bold mb-6 text-white">
+        Welcome
+        <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
+          Back
+        </span>
+      </h1>
+      <p className="text-xl text-white mb-8">
+      Sign in to access your influencer network
+      </p>
             </div>
           </div>
         </div>

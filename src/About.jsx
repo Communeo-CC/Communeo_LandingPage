@@ -270,32 +270,32 @@ const AboutPage = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gradient-to-b from-black-900 to-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">Meet Our Team</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="bg-black-600 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="relative h-80">
-                  <img
-                    src={member.imageUrl}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-orange-600 font-medium">{member.role}</p>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-gray-400">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+<section className="py-20 bg-gradient-to-b from-black-900 to-black">
+  <div className="container mx-auto px-4">
+    <h2 className="text-4xl font-bold text-center mb-16 text-white">Meet Our Team</h2>
+    <div className="grid md:grid-cols-3 gap-8">
+      {team.map((member, index) => (
+        <Card key={index} className="bg-black-600 border-black-600 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-center">
+          <CardContent className="p-8">
+            <div className="flex justify-center mb-6">
+              {/* Circular image container with gradient border */}
+              <div className="rounded-full p-1 bg-gradient-to-r from-red-500 to-orange-500">
+                <img
+                  src={member.imageUrl}
+                  alt={member.name}
+                  className="w-64 h-64 object-cover rounded-full"
+                />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold mb-1 text-white">{member.name}</h3>
+            <p className="text-orange-600 font-medium mb-4">{member.role}</p>
+            <p className="text-gray-400">{member.bio}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
 
        {/* Office Locations Section */}
