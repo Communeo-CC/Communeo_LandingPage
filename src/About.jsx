@@ -151,7 +151,7 @@ const AboutPage = () => {
       {/* Content Side */}
       <div className="lg:w-1/2 relative z-10">
         <div className="absolute -left-20 -top-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl" />
-        <div className="absolute -right-20 bottom-20 w-72 h-72 npmbg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute -right-20 bottom-20 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
         
         <h1 className="text-6xl lg:text-7xl font-bold mb-6 text-white">
           Welcome to
