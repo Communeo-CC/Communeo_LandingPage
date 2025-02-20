@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 export default function CombinedSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const [focused, setFocused] = useState(null);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -28,91 +29,138 @@ export default function CombinedSection() {
     };
   }, []);
 
+  const inputVariants = {
+    focused: { scale: 1.02, borderColor: "#f97316", boxShadow: "0 0 15px rgba(249, 115, 22, 0.3)" },
+    blurred: { scale: 1, borderColor: "#374151" }
+  };
+
+  const formVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        when: "beforeChildren",
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <section className="py-12 relative">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-        {/* Flex container for side-by-side layout */}
-        <div className="flex flex-col lg:flex-row gap-8 items-center">
-          {/* Contact Form Section - Now on the left */}
-          <div className="w-full lg:w-1/2">
-            <div className="relative max-w-2xl mx-auto sm:text-center">
-              <div
-                className="absolute inset-0 max-w-xs mx-auto h-44 blur-[118px]"
-                style={{
-                  background:
-                    "linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)",
-                }}
-              ></div>
-            </div>
+    <section className="py-16 min-h-screen flex items-center justify-center relative bg-black-600">
+      {/* Background gradient elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-red-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div className="absolute top-60 right-20 w-72 h-72 bg-orange-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-20 left-20 w-72 h-72 bg-yellow-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+      </div>
 
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="relative"
+      <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          variants={formVariants}
+          className="relative w-full"
+        >
+          {/* Form title */}
+          <motion.div 
+            variants={itemVariants}
+            className="text-center mb-8"
+          >
+            <h2 className="text-4xl font-bold text-white mb-2">Get in Touch</h2>
+            <p className="text-white text-lg">We'd love to hear from you</p>
+          </motion.div>
+
+          {/* Glowing border effect */}
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-600 via-red-500 to-orange-600 blur opacity-70 animate-pulse"></div>
+          
+          <form className="relative bg-gray-800 p-10 border rounded-xl border-gray-700 shadow-2xl backdrop-blur-sm">
+            {/* Name Input */}
+            <motion.div 
+              variants={itemVariants}
+              className="mb-8"
             >
-              <form className="grid gap-6 bg-gray-800 p-6 border rounded-xl border-orange-700 shadow-lg">
-                {/* Name Input */}
-                <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-1">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:ring-2 focus:ring-orange-500 focus:outline-none"
-                    placeholder="Enter your name"
-                  />
-                </div>
-
-                {/* Email Input */}
-                <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:ring-2 focus:ring-orange-500 focus:outline-none"
-                    placeholder="Enter your email"
-                  />
-                </div>
-
-                {/* Message Input */}
-                <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    className="w-full p-3 h-32 rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:ring-2 focus:ring-orange-500 focus:outline-none"
-                    placeholder="Type your message"
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 rounded-lg transition duration-200"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
-            </motion.div>
-          </div>
-
-          {/* Video Section - Now on the right */}
-          <div className="w-full lg:w-1/2">
-            <div className="relative h-[40vh] overflow-hidden rounded-xl">
-              <img
-                src="/vedio.gif"
-                alt="Video content"
-                className="w-full h-full object-cover"
+              <label className="block text-gray-300 text-base font-medium mb-3">
+                Name
+              </label>
+              <motion.input
+                type="text"
+                className="w-full p-4 text-lg rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:outline-none"
+                placeholder="Enter your name"
+                variants={inputVariants}
+                animate={focused === 'name' ? 'focused' : 'blurred'}
+                onFocus={() => setFocused('name')}
+                onBlur={() => setFocused(null)}
+                whileTap={{ scale: 0.995 }}
               />
-              
-            </div>
-          </div>
-        </div>
+            </motion.div>
+
+            {/* Email Input */}
+            <motion.div 
+              variants={itemVariants}
+              className="mb-8"
+            >
+              <label className="block text-gray-300 text-base font-medium mb-3">
+                Email
+              </label>
+              <motion.input
+                type="email"
+                className="w-full p-4 text-lg rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:outline-none"
+                placeholder="Enter your email"
+                variants={inputVariants}
+                animate={focused === 'email' ? 'focused' : 'blurred'}
+                onFocus={() => setFocused('email')}
+                onBlur={() => setFocused(null)}
+                whileTap={{ scale: 0.995 }}
+              />
+            </motion.div>
+
+            {/* Message Input */}
+            <motion.div 
+              variants={itemVariants}
+              className="mb-8"
+            >
+              <label className="block text-gray-300 text-base font-medium mb-3">
+                Message
+              </label>
+              <motion.textarea
+                className="w-full p-4 text-lg h-40 rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:outline-none"
+                placeholder="Type your message"
+                variants={inputVariants}
+                animate={focused === 'message' ? 'focused' : 'blurred'}
+                onFocus={() => setFocused('message')}
+                onBlur={() => setFocused(null)}
+                whileTap={{ scale: 0.995 }}
+              ></motion.textarea>
+            </motion.div>
+
+            {/* Submit Button */}
+            <motion.div 
+              variants={itemVariants}
+              className="text-center"
+            >
+              <motion.button
+                type="submit"
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-700 text-white text-lg font-medium py-4 rounded-lg transition duration-200"
+                whileHover={{ scale: 1.03, boxShadow: "0 0 15px rgba(249, 115, 22, 0.5)" }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Send Message
+              </motion.button>
+            </motion.div>
+          </form>
+        </motion.div>
       </div>
     </section>
   );
