@@ -164,7 +164,7 @@ function ContactSection() {
     "text-yellow-600",
     "text-red-700",
     "text-orange-600",
-    "text-yellow-800",
+    "text-yellow-500",
     "text-red-600",
     "text-yellow-600",
     "text-red-500",
