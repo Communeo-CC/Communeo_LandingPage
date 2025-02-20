@@ -89,31 +89,32 @@ const SignUpPage = () => {
       
       <div className="min-h-screen bg-black-600">
         {/* Enhanced Hero Section */}
-        <div className="relative overflow-hidden">
-          <img 
-            src={banner} 
-            alt="Community background" 
-            className="w-full h-96 object-cover opacity-20 hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black-800/50 to-black-800" />
-          <div className="absolute inset-0 flex items-center justify-center text-center">
-            <div className="max-w-3xl px-4 animate-fadeIn">
-              <div className="flex justify-center mb-4">
-                <Sparkles className="text-yellow-400 animate-pulse" size={40} />
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent mb-4">
-                Join Communeo
-              </h1>
-              <p className="text-2xl text-yellow-200 mb-6">
-                Get Started Today
-              </p>
-              <p className="text-orange-200">
-                Sign up now to receive the latest updates and exclusive content directly to your inbox.
-              </p>
-            </div>
-          </div>
-        </div>
-
+        {/* Enhanced Hero Section */}
+        
+<div className="relative overflow-hidden">
+  <img 
+    src={banner} 
+    alt="Community background" 
+    className="w-full h-[90vh] object-cover opacity-20 hover:scale-105 transition-transform duration-700"
+  />
+  <div className="absolute inset-0 bg-gradient-to-b from-black-800/50 to-black-800" />
+  <div className="absolute inset-0 flex items-center justify-center text-center">
+    <div className="max-w-3xl px-4 animate-fadeIn">
+      <div className="flex justify-center mb-4">
+        <Sparkles className="text-yellow-400 animate-pulse" size={40} />
+      </div>
+      <h1 className="text-6xl lg:text-7xl font-bold mb-6 text-white">
+        Elevate Your
+        <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
+          Brand
+        </span>
+      </h1>
+      <p className="text-xl text-white mb-8">
+        Effortlessly Connect with Influencers Today
+      </p>
+    </div>
+  </div>
+</div>
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="grid md:grid-cols-1 gap-12">
