@@ -38,7 +38,7 @@ const SignInPage = () => {
           <div className="absolute inset-0 bg-black-600" />
           <div className="absolute inset-0 flex items-center justify-center text-center">
             <div className="max-w-4xl px-4 animate-fadeIn">
-              <h1 className="text-7xl lg:text-8xl font-bold mb-8 text-white">
+              <h1 className="text-6xl lg:text-6xl font-bold mb-6 text-white">
                 Welcome <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Back</span>
               </h1>
               <p className="text-2xl text-white mb-12">

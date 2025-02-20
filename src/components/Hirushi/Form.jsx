@@ -31,7 +31,7 @@ export default function CombinedSection() {
 
   const inputVariants = {
     focused: { scale: 1.02, borderColor: "#f97316", boxShadow: "0 0 15px rgba(249, 115, 22, 0.3)" },
-    blurred: { scale: 1, borderColor: "#374151" }
+    blurred: { scale: 1, borderColor: "#f97316" }
   };
 
   const formVariants = {
@@ -73,7 +73,13 @@ export default function CombinedSection() {
           variants={formVariants}
           className="relative w-full"
         >
-          {/* Form title */}
+          
+
+          {/* Glowing border effect */}
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-600 via-red-500 to-orange-600 blur opacity-70 animate-pulse border rounded-xl border-orange-600"></div>
+          
+          <form className="relative  p-10  shadow-2xl backdrop- -sm">
+            {/* Form title */}
           <motion.div 
             variants={itemVariants}
             className="text-center mb-8"
@@ -82,21 +88,17 @@ export default function CombinedSection() {
             <p className="text-white text-lg">We'd love to hear from you</p>
           </motion.div>
 
-          {/* Glowing border effect */}
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-600 via-red-500 to-orange-600 blur opacity-70 animate-pulse"></div>
-          
-          <form className="relative bg-gray-800 p-10 border rounded-xl border-gray-700 shadow-2xl backdrop-blur-sm">
             {/* Name Input */}
             <motion.div 
               variants={itemVariants}
               className="mb-8"
             >
-              <label className="block text-gray-300 text-base font-medium mb-3">
+              <label className="block text-white text-base font-medium mb-3">
                 Name
               </label>
               <motion.input
                 type="text"
-                className="w-full p-4 text-lg rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:outline-none"
+                className="w-full p-4 text-lg rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
                 placeholder="Enter your name"
                 variants={inputVariants}
                 animate={focused === 'name' ? 'focused' : 'blurred'}
@@ -111,12 +113,12 @@ export default function CombinedSection() {
               variants={itemVariants}
               className="mb-8"
             >
-              <label className="block text-gray-300 text-base font-medium mb-3">
+              <label className="block text-white text-base font-medium mb-3">
                 Email
               </label>
               <motion.input
                 type="email"
-                className="w-full p-4 text-lg rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:outline-none"
+                className="w-full p-4 text-lg rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
                 placeholder="Enter your email"
                 variants={inputVariants}
                 animate={focused === 'email' ? 'focused' : 'blurred'}
@@ -131,11 +133,11 @@ export default function CombinedSection() {
               variants={itemVariants}
               className="mb-8"
             >
-              <label className="block text-gray-300 text-base font-medium mb-3">
+              <label className="block text-white text-base font-medium mb-3">
                 Message
               </label>
               <motion.textarea
-                className="w-full p-4 text-lg h-40 rounded-lg bg-gray-900 border border-gray-700 text-gray-300 focus:outline-none"
+                className="w-full p-4 text-lg h-40 rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
                 placeholder="Type your message"
                 variants={inputVariants}
                 animate={focused === 'message' ? 'focused' : 'blurred'}
@@ -152,7 +154,7 @@ export default function CombinedSection() {
             >
               <motion.button
                 type="submit"
-                className="w-full bg-gradient-to-r from-orange-500 to-orange-700 text-white text-lg font-medium py-4 rounded-lg transition duration-200"
+                className="w-full bg-gradient-to-r from-yellow-600 red-500 to-orange-700 text-white text-lg font-medium py-4 rounded-lg transition duration-200"
                 whileHover={{ scale: 1.03, boxShadow: "0 0 15px rgba(249, 115, 22, 0.5)" }}
                 whileTap={{ scale: 0.97 }}
               >

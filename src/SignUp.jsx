@@ -103,7 +103,7 @@ const SignUpPage = () => {
       <div className="flex justify-center mb-4">
         <Sparkles className="text-yellow-400 animate-pulse" size={40} />
       </div>
-      <h1 className="text-6xl lg:text-7xl font-bold mb-6 text-white">
+      <h1 className="text-6xl lg:text-6xl font-bold mb-6 text-white">
         Elevate Your
         <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
           Brand
