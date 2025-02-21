@@ -4,7 +4,7 @@ import { service1, service2, service3, check } from "../../assets";
 import { brainwaveServices, brainwaveServicesIcons } from "../../constants";
 import {
   Gradient,
-} from ".././design/Services";
+} from "./design/Services";
 
 import Generating_cc from "./Generating_cc";
 

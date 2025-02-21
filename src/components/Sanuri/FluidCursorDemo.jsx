@@ -1,6 +1,6 @@
 "use client";
 
-import FluidCursor from "../ui/fluid-cursor";
+import FluidCursor from "../../components/ui/fluid-cursor";
 
 const FluidCursorDemo = () => {
 

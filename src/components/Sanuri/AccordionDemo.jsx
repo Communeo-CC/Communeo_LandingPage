@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, AccordionSummary, AccordionDetails } from "../ui/accordion";
+import { Accordion, AccordionItem, AccordionSummary, AccordionDetails } from "../../components/ui/accordion";
 
 const AccordionDemo = () => {
   const accordions = [
