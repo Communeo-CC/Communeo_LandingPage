@@ -30,7 +30,7 @@ import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose2.gif";
 import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
-import communeoVideo from "/COMMUNEO.mp4";
+import communeoVideo from "../src/assets/sanuri/COMMUNEO.mp4";
 import AnimatedStatsSection from './components/Sanuri/AnimatedStatsSection';
 import AutoPauseVideo from './components/Sanuri/AutoPauseVideo';
 

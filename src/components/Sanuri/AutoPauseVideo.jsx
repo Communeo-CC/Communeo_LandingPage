@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import communeoVideo from "/COMMUNEO.mp4";
+import communeoVideo from "../../assets/sanuri/communeo.mp4";
 
 const AutoPauseVideo = () => {
   const videoRef = useRef(null);
