@@ -32,7 +32,7 @@ import choose3 from "./components/Sanuri/images/choose2.gif";
 import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
 import communeoVideo from "../src/assets/sanuri/COMMUNEO.mp4";
 import AnimatedStatsSection from './components/Sanuri/AnimatedStatsSection';
-import AutoPauseVideo from './components/Sanuri/AutoPauseVideo';
+
 
 
 
@@ -186,7 +186,7 @@ const AboutPage = () => {
 
      {/* Video Side */}
 <div className="lg:w-1/2 relative">
-  <AutoPauseVideo />
+
 </div>
 
   
