@@ -17,39 +17,35 @@ function GradualSpacing({
       <div className="container sm:mt-20 md:mt-40 lg:mt-10 mx-auto">
         <div className="flex flex-col items-start sm:items-center space-y-4">
           <AnimatePresence>
-            {/* First Line - "Contact Us" animates letter-by-letter */}
-            <div className="flex space-x-1 w-full sm:w-auto">
-              {textLines[0].split('').map((char, i) => (
-                <motion.p
-                  ref={ref}
-                  key={`first-${i}`}
-                  initial={{ opacity: 0, x: -18 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  exit="hidden"
-                  transition={{
-                    duration: 0.2,
-                    delay: i * 0.1, 
-                  }}
-                  className="font-semibold text-[1.60rem]  
-                             sm:text-[1.70rem]  
-                             md:text-[3.05rem]  
-                             xl:text-[3.0rem]  
-                             leading-[2.25rem] sm:leading-[2.75rem] md:leading-[4.0625rem] xl:leading-[4.5rem] 
-                             text-left sm:text-center tracking-tighter max-w-full sm:max-w-md lg:max-w-2xl"
-                >
-                  {char === ' ' ? <span>&nbsp;</span> : char}
-                </motion.p>
-              ))}
-            </div>
+            {/* Title - Solid Orange Color */}
+            <motion.h1
+              ref={ref}
+              initial={{ opacity: 0, x: -18 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              exit="hidden"
+              transition={{
+                duration: 0.6,
+                ease: 'easeOut',
+              }}
+              className="font-bold text-[1.60rem]  
+                         sm:text-[1.70rem]  
+                         md:text-[3.05rem]  
+                         xl:text-[3.0rem]  
+                         leading-[2.25rem] sm:leading-[2.75rem] md:leading-[4.0625rem] xl:leading-[4.5rem] 
+                         text-left sm:text-center tracking-tighter max-w-full sm:max-w-md lg:max-w-2xl
+                         text-orange-800"  // Applying the same solid orange to both words
+            >
+              {textLines[0]}
+            </motion.h1>
 
-            {/* Second Line - "Reach out to us..." fades in all at once */}
+            {/* Subtitle - "Reach out to us..." */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               exit={{ opacity: 0 }}
               transition={{
                 duration: 1.0,
-                delay: textLines[0].length * 0.1, // Delay after "Contact Us" animation finishes
+                delay: 0.6, // Delay after title animation finishes
               }}
               className="text-[1rem] sm:text-[0.8rem] md:text-[1.4rem] xl:text-[1.3rem] 
                          text-left sm:text-center text-white mt-2 max-w-full sm:max-w-md lg:max-w-2xl"
