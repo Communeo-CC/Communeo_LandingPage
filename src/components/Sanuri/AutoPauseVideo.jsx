@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import communeoVideo from "/COMMUNEO.mp4";
+import React, { useEffect, useRef, useState } from 'react';
+import { Play, Pause } from 'lucide-react';
 
 const AutoPauseVideo = () => {
   const videoRef = useRef(null);
