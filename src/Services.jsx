@@ -15,7 +15,7 @@ import banner from "./components/Sanuri/images/banner.avif";
 import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose3.png";
-import videoUrl from "/vedio1.mp4";
+import videoUrl from "../src/assets/sanuri/vedio1.mp4";
 import hirushi1 from "./components/Sanuri/images/hirushi1.jpg";
 import kaveesha from "./components/Sanuri/images/kaveesha.jpg";
 import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
