@@ -23,9 +23,8 @@ const App = () => {
         {/* SpotlightPreview is a custom component */}
         <Benefits />
         <Form />
-        <ContactDetails />
-        <LocationDetails />
         <Connect />
+        <LocationDetails />
         <Footer />
       </div>
 

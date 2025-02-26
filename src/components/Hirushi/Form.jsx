@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { User, Mail, MessageSquare, Send, DollarSign, Hash } from "lucide-react";
 
-export default function CombinedSection() {
+export default function InfluencerContactForm() {
   const [isVisible, setIsVisible] = useState(false);
   const [focused, setFocused] = useState(null);
   const ref = useRef(null);
@@ -65,7 +66,7 @@ export default function CombinedSection() {
         <div className="absolute -bottom-20 left-20 w-72 h-72 bg-yellow-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
+      <div className="w-full max-w-2xl mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -73,59 +74,117 @@ export default function CombinedSection() {
           variants={formVariants}
           className="relative w-full"
         >
-          
-
           {/* Glowing border effect */}
           <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-600 via-red-500 to-orange-600 blur opacity-70 animate-pulse border rounded-xl border-orange-600"></div>
           
-          <form className="relative  p-10  shadow-2xl backdrop- -sm">
+          <form className="relative bg-black/80 p-8 md:p-10 rounded-xl shadow-2xl backdrop-blur-sm border border-gray-900">
             {/* Form title */}
-          <motion.div 
-            variants={itemVariants}
-            className="text-center mb-8"
-          >
-            <h2 className="text-4xl font-bold text-white mb-2">Get in Touch</h2>
-            <p className="text-white text-lg">We'd love to hear from you</p>
-          </motion.div>
+            <motion.div 
+              variants={itemVariants}
+              className="text-center mb-10"
+            >
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-red-600 to-orange-400 bg-clip-text text-transparent mb-2">Connect with Influencers</h2>
+              <p className="text-gray-300">Tell us about your campaign goals</p>
+            </motion.div>
 
             {/* Name Input */}
             <motion.div 
               variants={itemVariants}
-              className="mb-8"
+              className="mb-6"
             >
-              <label className="block text-white text-base font-medium mb-3">
-                Name
+              <label className="block text-gray-200 text-sm font-medium mb-2">
+                Brand Name
               </label>
-              <motion.input
-                type="text"
-                className="w-full p-4 text-lg rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
-                placeholder="Enter your name"
-                variants={inputVariants}
-                animate={focused === 'name' ? 'focused' : 'blurred'}
-                onFocus={() => setFocused('name')}
-                onBlur={() => setFocused(null)}
-                whileTap={{ scale: 0.995 }}
-              />
+              <div className="relative">
+                <User className="absolute left-3 top-3.5 h-5 w-5 text-orange-400" />
+                <motion.input
+                  type="text"
+                  className="w-full bg-black-600 border-2 border-orange-700/60 rounded-lg py-3 pl-10 pr-4 text-white placeholder-orange-200/50 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all"
+                  placeholder="Your brand name"
+                  variants={inputVariants}
+                  animate={focused === 'name' ? 'focused' : 'blurred'}
+                  onFocus={() => setFocused('name')}
+                  onBlur={() => setFocused(null)}
+                  whileTap={{ scale: 0.995 }}
+                />
+              </div>
             </motion.div>
 
             {/* Email Input */}
             <motion.div 
               variants={itemVariants}
-              className="mb-8"
+              className="mb-6"
             >
-              <label className="block text-white text-base font-medium mb-3">
-                Email
+              <label className="block text-gray-200 text-sm font-medium mb-2">
+                Business Email
               </label>
-              <motion.input
-                type="email"
-                className="w-full p-4 text-lg rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
-                placeholder="Enter your email"
-                variants={inputVariants}
-                animate={focused === 'email' ? 'focused' : 'blurred'}
-                onFocus={() => setFocused('email')}
-                onBlur={() => setFocused(null)}
-                whileTap={{ scale: 0.995 }}
-              />
+              <div className="relative">
+                <Mail className="absolute left-3 top-3.5 h-5 w-5 text-orange-400" />
+                <motion.input
+                  type="email"
+                  className="w-full bg-black-600 border-2 border-orange-700/60 rounded-lg py-3 pl-10 pr-4 text-white placeholder-orange-200/50 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all"
+                  placeholder="you@company.com"
+                  variants={inputVariants}
+                  animate={focused === 'email' ? 'focused' : 'blurred'}
+                  onFocus={() => setFocused('email')}
+                  onBlur={() => setFocused(null)}
+                  whileTap={{ scale: 0.995 }}
+                />
+              </div>
+            </motion.div>
+
+            {/* Campaign Type Dropdown */}
+            <motion.div 
+              variants={itemVariants}
+              className="mb-6"
+            >
+              <label className="block text-gray-200 text-sm font-medium mb-2">
+                Campaign Type
+              </label>
+              <div className="relative">
+                <Hash className="absolute left-3 top-3.5 h-5 w-5 text-orange-400" />
+                <motion.select
+                  className="w-full bg-black-600 border-2 border-orange-700/60 rounded-lg py-3 pl-10 pr-4 text-white appearance-none focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all"
+                  variants={inputVariants}
+                  animate={focused === 'campaign' ? 'focused' : 'blurred'}
+                  onFocus={() => setFocused('campaign')}
+                  onBlur={() => setFocused(null)}
+                >
+                  <option value="" disabled selected>Select campaign type</option>
+                  <option value="product">Product Promotion</option>
+                  <option value="brand">Brand Awareness</option>
+                  <option value="social">Social Media Takeover</option>
+                  <option value="content">Content Creation</option>
+                  <option value="affiliate">Affiliate Marketing</option>
+                </motion.select>
+              </div>
+            </motion.div>
+
+            {/* Budget Range */}
+            <motion.div 
+              variants={itemVariants}
+              className="mb-6"
+            >
+              <label className="block text-gray-200 text-sm font-medium mb-2">
+                Budget Range
+              </label>
+              <div className="relative">
+                <DollarSign className="absolute left-3 top-3.5 h-5 w-5 text-orange-400" />
+                <motion.select
+                  className="w-full bg-black-600 border-2 border-orange-700/60 rounded-lg py-3 pl-10 pr-4 text-white appearance-none focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all"
+                  variants={inputVariants}
+                  animate={focused === 'budget' ? 'focused' : 'blurred'}
+                  onFocus={() => setFocused('budget')}
+                  onBlur={() => setFocused(null)}
+                >
+                  <option value="" disabled selected>Select budget range</option>
+                  <option value="1000">$1,000 - $5,000</option>
+                  <option value="5000">$5,000 - $10,000</option>
+                  <option value="10000">$10,000 - $25,000</option>
+                  <option value="25000">$25,000 - $50,000</option>
+                  <option value="50000">$50,000+</option>
+                </motion.select>
+              </div>
             </motion.div>
 
             {/* Message Input */}
@@ -133,18 +192,20 @@ export default function CombinedSection() {
               variants={itemVariants}
               className="mb-8"
             >
-              <label className="block text-white text-base font-medium mb-3">
-                Message
+              <label className="block text-gray-200 text-sm font-medium mb-2">
+                Campaign Details
               </label>
-              <motion.textarea
-                className="w-full p-4 text-lg h-40 rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
-                placeholder="Type your message"
-                variants={inputVariants}
-                animate={focused === 'message' ? 'focused' : 'blurred'}
-                onFocus={() => setFocused('message')}
-                onBlur={() => setFocused(null)}
-                whileTap={{ scale: 0.995 }}
-              ></motion.textarea>
+              <div className="relative">
+                <MessageSquare className="absolute left-3 top-3.5 h-5 w-5 text-orange-400" />
+                <motion.textarea
+                  className="w-full bg-black-600 border-2 border-orange-700/60 rounded-lg py-3 pl-10 pr-4 h-32 text-white placeholder-orange-200/50 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all"
+                  placeholder="Describe your campaign goals, target audience, and preferred influencer types"
+                  variants={inputVariants}
+                  animate={focused === 'message' ? 'focused' : 'blurred'}
+                  onFocus={() => setFocused('message')}
+                  onBlur={() => setFocused(null)}
+                ></motion.textarea>
+              </div>
             </motion.div>
 
             {/* Submit Button */}
@@ -154,13 +215,22 @@ export default function CombinedSection() {
             >
               <motion.button
                 type="submit"
-                className="w-full bg-gradient-to-r from-yellow-600 red-500 to-orange-700 text-white text-lg font-medium py-4 rounded-lg transition duration-200"
-                whileHover={{ scale: 1.03, boxShadow: "0 0 15px rgba(249, 115, 22, 0.5)" }}
-                whileTap={{ scale: 0.97 }}
+                className="w-full bg-gradient-to-r from-yellow-600 via-red-500 to-orange-600 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition duration-200"
+                whileHover={{ scale: 1.02, boxShadow: "0 0 15px rgba(249, 115, 22, 0.3)" }}
+                whileTap={{ scale: 0.98 }}
               >
-                Send Message
+                <Send className="h-5 w-5" />
+                <span>Submit Campaign Request</span>
               </motion.button>
             </motion.div>
+
+            {/* Privacy note */}
+            <motion.p
+              variants={itemVariants}
+              className="text-center text-xs text-gray-400 mt-6"
+            >
+              By submitting this form, you agree to our Privacy Policy and Terms of Service.
+            </motion.p>
           </form>
         </motion.div>
       </div>

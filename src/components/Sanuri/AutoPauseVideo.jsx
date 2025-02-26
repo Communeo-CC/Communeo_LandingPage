@@ -1,28 +1,40 @@
-import React, { useEffect, useRef } from 'react';
-import communeoVideo from "/COMMUNEO.mp4";
+import React, { useEffect, useRef, useState } from 'react';
+import { Play, Pause } from 'lucide-react';
 
 const AutoPauseVideo = () => {
   const videoRef = useRef(null);
   const videoContainerRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true); // Start with true for autoplay
 
+  // Initial auto-play when component mounts
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Error auto-playing video:", error);
+        setIsPlaying(false);
+      });
+    }
+  }, []);
+
+  // Handle scroll-based auto-pause
   useEffect(() => {
     const options = {
       root: null,
       rootMargin: '0px',
-      
+      threshold: 0.5
     };
 
     const handleIntersect = (entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Check if video is loaded before playing
-          if (videoRef.current?.readyState >= 2) {
-            videoRef.current.play().catch(error => {
-              console.log("Error playing video:", error);
-            });
-          }
-        } else {
-          videoRef.current?.pause();
+        if (!entry.isIntersecting && videoRef.current) {
+          videoRef.current.pause();
+          setIsPlaying(false);
+        } else if (entry.isIntersecting && videoRef.current && isPlaying) {
+          // Only auto-play if it was playing before
+          videoRef.current.play().catch(error => {
+            console.log("Error playing video:", error);
+            setIsPlaying(false);
+          });
         }
       });
     };
@@ -33,39 +45,68 @@ const AutoPauseVideo = () => {
       observer.observe(videoContainerRef.current);
     }
 
-    // Add event listener for video loaded
-    const handleLoadedData = () => {
-      if (videoRef.current && videoRef.current.offsetParent !== null) {
-        videoRef.current.play().catch(error => {
-          console.log("Error playing video:", error);
-        });
-      }
-    };
+    return () => observer.disconnect();
+  }, [isPlaying]);
 
-    videoRef.current?.addEventListener('loadeddata', handleLoadedData);
+  // Keep video state and button state in sync
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
 
     return () => {
-      observer.disconnect();
-      videoRef.current?.removeEventListener('loadeddata', handleLoadedData);
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
     };
   }, []);
 
+  // Handle manual play/pause
+  const handlePlayPause = () => {
+    if (!videoRef.current) return;
+
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play().catch(error => {
+        console.log("Error playing video:", error);
+      });
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
-    <div ref={videoContainerRef} className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
-      <div className="aspect-video relative">
-        <video 
+    <div 
+      ref={videoContainerRef}
+      className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl"
+    >
+      <div className="relative aspect-video">
+        <video
           ref={videoRef}
-          className="w-full h-full object-cover rounded-2xl"
-          controls
-          playsInline // Add this for better mobile support
+          src="/COMMUNEO.mp4"
+          className="w-full h-full object-cover"
           loop
-          // Keep muted for better autoplay support
+          playsInline
         >
-          <source src={communeoVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        
+        <button
+          onClick={handlePlayPause}
+          className="absolute bottom-4 left-4 z-10 p-3 bg-black/50 rounded-full hover:bg-black/70 transition-colors"
+          aria-label={isPlaying ? 'Pause' : 'Play'}
+        >
+          {isPlaying ? (
+            <Pause className="w-6 h-6 text-white" />
+          ) : (
+            <Play className="w-6 h-6 text-white" />
+          )}
+        </button>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black-600 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 };

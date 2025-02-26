@@ -6,11 +6,11 @@ import {
   Award, Zap, Coffee
 } from 'lucide-react';
 
-import Footer from "./components/Sanuri/Footer";
-import Header from "./components/Sanuri/Header";
-import { Button } from './components/Sanuri/ui/button';
-import { Card, CardHeader, CardTitle, CardContent } from './components/Sanuri/ui/card';
-import ButtonGradient from "././assets/svg/ButtonGradient";
+import ButtonGradient from "./assets/svg/ButtonGradient";
+import Footer from "./components/Hirushi/Footer";
+import Header from "./components/Hirushi/Header";
+
+import GradualSpace from "./components/ui/GradualSpace";
 import banner from "./components/Sanuri/images/banner.avif";
 import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
@@ -385,6 +385,7 @@ const ServicesPage = () => (
       <CTASection />
       <Footer />
     </div>
+     <ButtonGradient />
   </>
 );
 
