@@ -45,7 +45,7 @@ const FormInput = ({ icon: Icon, label, ...props }) => (
       )}
       <input
         {...props}
-        className={`w-full bg-black/30 border border-orange-700 rounded-lg py-3 ${Icon ? 'pl-10' : 'pl-4'} pr-4 text-white placeholder-orange-300/50 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all hover:border-orange-500`}
+        className={`w-full bg-black-600 border border-orange-700 rounded-lg py-3 ${Icon ? 'pl-10' : 'pl-4'} pr-4 text-white placeholder-orange-300/50 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all hover:border-orange-500`}
       />
     </div>
   </div>
@@ -175,7 +175,7 @@ const SignUpPage = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-1 gap-12">
           {/* Form Section with All Fields Preserved */}
-          <div className="relative bg-black/40 backdrop-blur-lg rounded-2xl p-8 text-white hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-300">
+          <div className="relative bg-black-600 backdrop-blur-lg rounded-2xl p-8 text-white hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-2xl" />
             <div className="relative">
               <h2 className="text-3xl font-bold mb-2 text-orange-400">Register Now</h2>
@@ -239,7 +239,7 @@ const SignUpPage = () => {
                       name="role"
                       value={formData.role}
                       onChange={handleChange}
-                      className="w-full bg-black/30 border border-orange-700 rounded-lg py-3 pl-10 pr-10 text-white appearance-none focus:outline-none focus:border-orange-500 transition-colors hover:border-orange-500"
+                      className="w-full bg-black-600 border border-orange-700 rounded-lg py-3 pl-10 pr-10 text-white appearance-none focus:outline-none focus:border-orange-500 transition-colors hover:border-orange-500"
                       required
                     >
                       <option value="">Choose one...</option>
@@ -259,7 +259,7 @@ const SignUpPage = () => {
                       name="source"
                       value={formData.source}
                       onChange={handleChange}
-                      className="w-full bg-black/30 border border-orange-700 rounded-lg py-3 px-4 text-white appearance-none focus:outline-none focus:border-orange-500 transition-colors hover:border-orange-500"
+                      className="w-full bg-black-600 border border-orange-700 rounded-lg py-3 px-4 text-white appearance-none focus:outline-none focus:border-orange-500 transition-colors hover:border-orange-500"
                       required
                     >
                       <option value="">None</option>
@@ -280,7 +280,7 @@ const SignUpPage = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full bg-black/30 border border-orange-700 rounded-lg py-3 px-4 text-white placeholder-orange-300/50 focus:outline-none focus:border-orange-500 transition-colors hover:border-orange-500 min-h-[100px]"
+                    className="w-full bg-black-600 border border-orange-700 rounded-lg py-3 px-4 text-white placeholder-orange-300/50 focus:outline-none focus:border-orange-500 transition-colors hover:border-orange-500 min-h-[100px]"
                     placeholder="Write your message..."
                   />
                 </div>
@@ -325,7 +325,7 @@ const SignUpPage = () => {
           {/* Enhanced Information Section */}
           <div className="space-y-8">
             {/* Community Card */}
-            <div className="group bg-black/40 backdrop-blur-lg rounded-2xl p-8 text-white hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-300">
+            <div className="group bg-black-600 backdrop-blur-lg rounded-2xl p-8 text-white hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <Heart className="text-orange-400 group-hover:scale-110 transition-transform" size={32} />
                 <h2 className="text-2xl font-bold text-orange-400">Join Our Community Today!</h2>
@@ -361,7 +361,7 @@ const SignUpPage = () => {
             </div>
 
             {/* Learn More Card */}
-            <div className="group bg-black/40 backdrop-blur-lg rounded-2xl p-8 text-white text-center hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-300">
+            <div className="group bg-black-600 backdrop-blur-lg rounded-2xl p-8 text-white text-center hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-300">
               <div className="relative inline-block mb-6">
                 <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all" />
                 <img 
