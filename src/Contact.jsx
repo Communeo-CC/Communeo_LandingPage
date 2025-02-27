@@ -21,7 +21,7 @@ const App = () => {
         <Header />
         <GradualSpace/>
         {/* SpotlightPreview is a custom component */}
-        <Benefits />
+        
         <Form />
         <Connect />
         <LocationDetails />
