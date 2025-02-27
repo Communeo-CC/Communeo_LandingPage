@@ -144,16 +144,16 @@ function ContactSection() {
   };
 
   const iconPositions = [
-    { top: "10%", left: "60%" },  //mail
+    { top: "20%", left: "60%" },  //mail
     { top: "35%", left: "75%" },  //phone
-    { top: "50%", left: "50%" },  //mappin
-    { top: "85%", left: "80%" },  //instagram
-    { top: "20%", left: "40%" },  //linkedin
-    { top: "35%", left: "25%" },  //globe
+    { top: "45%", left: "60%" },  //mappin
+    { top: "80%", left: "80%" },  //instagram
+    { top: "33%", left: "45%" },  //linkedin
+    { top: "87%", left: "50%" },  //globe
     { top: "15%", left: "85%" },  // user
     { top: "50%", left: "90%" },  //Qrcode
-    { top: "80%", left: "35%" },  //message
-    { top: "65%", left: "65%" },  //home
+    { top: "68%", left: "60%" },  //message
+    { top: "57%", left: "75%" },  //home
   ];
 
   const icons = [Mail, Phone, MapPin, Instagram, Linkedin, Globe, User, QrCode, MessageCircle, HomeIcon];
