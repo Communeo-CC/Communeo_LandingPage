@@ -177,7 +177,7 @@ const AboutPage = () => {
 
               {/* Video Side */}
               <div className="lg:w-1/2 relative">
-                <AutoPauseVideo />
+                
               </div>
             </div>
           </div>
