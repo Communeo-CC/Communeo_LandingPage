@@ -30,7 +30,7 @@ import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose2.gif";
 import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
 import AnimatedStatsSection from './components/Sanuri/AnimatedStatsSection';
-import AutoPauseVideo from './components/Sanuri/AutoPauseVideo';
+import sanuriGif from './assets/sanuri/sanuri.gif';
 
 const AboutPage = () => {
   const missions = [
@@ -134,7 +134,7 @@ const AboutPage = () => {
   return (
     <>
       {/* Removed the extra div with bg-black-600 class that was causing the issue */}
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+      <div >
         <Header />
         <div className="h-16"></div>
         {/* Hero Section - Simplified background */}
@@ -177,6 +177,12 @@ const AboutPage = () => {
 
               {/* Video Side */}
               <div className="lg:w-1/2 relative">
+                <div className="absolute inset-0 bg-black-900 opacity-50" />
+                <img 
+                  src={sanuriGif}
+                  alt="Sanuri Gif"
+                  className="w-full h-full object-cover"
+                />
                 
               </div>
             </div>
