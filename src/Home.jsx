@@ -16,7 +16,7 @@ import FluidCursorDemo from "./components/Sanuri/FluidCursorDemo";
 const Home = () => {
   return (
     <>
-    <FluidCursorDemo />
+
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <Hero />
