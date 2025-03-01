@@ -155,7 +155,6 @@ const AboutPage = () => {
                   Empowering businesses through innovative social media solutions. 
                   We combine AI technology with human creativity to deliver exceptional results.
                 </p>
-
                 <div className="flex gap-6 mb-12">
                   <Button 
                     size="lg" 
@@ -172,7 +171,6 @@ const AboutPage = () => {
                   </Button>
                 </div>
               </div>
-
               {/* Video Side */}
               <div className="lg:w-1/2 relative">
                 <div className="absolute inset-0 bg-black-900 opacity-50" />
