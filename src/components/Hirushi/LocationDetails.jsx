@@ -34,14 +34,14 @@ export default function Locations() {
 
   return (
     <section ref={sectionRef} className="py-40 text-center">
-      <motion.h3
-        className="text-lg font-large text-white"
+      <motion.h2
+        className="text-5xl font-bold font-large text-white"
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         Visit Us
-      </motion.h3>
+      </motion.h2>
 
       <motion.h2
         className="text-3xl font-bold text-orange-600 mb-2"

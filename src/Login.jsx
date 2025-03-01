@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 import Header from "./components/Sanuri/Header";
 import Footer from "./components/Sanuri/Footer";
-import banner from "./components/Sanuri/images/banner.avif";
+import login from "./components/Sanuri/images/signUp.png";
 import FluidCursorDemo from "./components/Sanuri/FluidCursorDemo";
 
 const SignInPage = () => {
@@ -25,18 +25,17 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="grid md:grid-cols-1 gap-12">
+    <div className="grid md:grid-cols-1 gap-10">
       <Header />
+      
+      {/* Added spacing between header and hero section */}
+      <div className="h-16"></div>
+      
       <div className="min-h-screen bg-black-600">
-        {/* Hero Section - Made taller */}
-        <div className="relative overflow-hidden">
-          <img 
-            src={banner}
-            alt="Welcome background" 
-            className="w-full h-[100vh] object-cover opacity-20 hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-black-600" />
-          <div className="absolute inset-0 flex items-center justify-center text-center">
+        {/* Hero Section with text on left, image on right */}
+        <div className="grid md:grid-cols-2 gap-5">
+          {/* Left Column - Welcome Text */}
+          <div className="flex items-center justify-center text-center p-8">
             <div className="max-w-4xl px-4 animate-fadeIn">
               <h1 className="text-6xl lg:text-6xl font-bold mb-6 text-white">
                 Welcome <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Back</span>
@@ -46,10 +45,19 @@ const SignInPage = () => {
               </p>
             </div>
           </div>
+          
+          {/* Right Column - Image Container */}
+          <div className="relative overflow-hidden">
+            <img 
+              src={login}
+              alt="Welcome background" 
+              className="w-[70] h-[70vh] object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
         </div>
 
         {/* Main Content - Maximized Form */}
-        <div className="max-w-3xl mx-auto px-6 py-16">
+        <div className="max-w-2xl mx-auto px-3 py-16">
           {/* Animated border effect */}
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-x"></div>
