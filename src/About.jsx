@@ -18,7 +18,6 @@ import Header from "./components/Sanuri/Header";
 import { Button } from './components/Sanuri/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from './components/Sanuri/ui/card';
 import ButtonGradient from "././assets/svg/ButtonGradient";
-import pic1 from "./components/Sanuri/images/pic1.jpg";
 import visal from "./components/Sanuri/images/visal.jpg";
 import sanuri from "./components/Sanuri/images/sanuri.jpg";
 import kaveesha from "./components/Sanuri/images/kaveesha.jpg";
@@ -28,7 +27,6 @@ import vidul from "./components/Sanuri/images/Vidul.jpg";
 import choose1 from "./components/Sanuri/images/choose1.jpg";
 import choose2 from "./components/Sanuri/images/choose2.jpeg";
 import choose3 from "./components/Sanuri/images/choose2.gif";
-import FluidCursorDemo from "../src/components/Sanuri/FluidCursorDemo";
 import AnimatedStatsSection from './components/Sanuri/AnimatedStatsSection';
 import sanuriGif from './assets/sanuri/sanuri.gif';
 
