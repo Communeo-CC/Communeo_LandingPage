@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { User, Mail, MessageSquare, Send, DollarSign, Hash } from "lucide-react";
+import { Send } from "lucide-react";
 
 export default function InfluencerContactForm() {
   const [isVisible, setIsVisible] = useState(false);
@@ -97,7 +97,7 @@ export default function InfluencerContactForm() {
               </label>
               <motion.input
                 type="text"
-                className="w-full p-4 text-lg rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
+                className="w-full p-4 rounded-xl bg-black/40 border-2 border-orange-700 py-4 pl-12 pr-4 text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
                 placeholder="Enter your name"
                 variants={inputVariants}
                 animate={focused === 'name' ? 'focused' : 'blurred'}
@@ -117,7 +117,7 @@ export default function InfluencerContactForm() {
               </label>
               <motion.input
                 type="email"
-                className="w-full p-4 text-lg rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
+                className="w-full p-4 rounded-xl bg-black/40 border-2 border-orange-700 py-4 pl-12 pr-4 text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
                 placeholder="Enter your email"
                 variants={inputVariants}
                 animate={focused === 'email' ? 'focused' : 'blurred'}
@@ -136,7 +136,7 @@ export default function InfluencerContactForm() {
                 Campaign Details
               </label>
               <motion.textarea
-                className="w-full p-4 text-lg h-40 rounded-lg bg-black/40 border-2 border-orange-700 rounded-xl py-4 pl-12 pr-4 text-lg text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
+                className="w-full p-4 h-40 rounded-xl bg-black/40 border-2 border-orange-700 py-4 pl-12 pr-4 text-white placeholder-orange-300/90 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
                 placeholder="Type your message"
                 variants={inputVariants}
                 animate={focused === 'message' ? 'focused' : 'blurred'}
