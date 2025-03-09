@@ -122,7 +122,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Clock, Share2, TrendingUp, Users, BarChart2 } from "lucide-react";
 
-function npm ContactSection() {
+function npmContactSection() {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef(null);
 
